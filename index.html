@@ -42,30 +42,114 @@
   --radius-xl:14px;
   --font:'IBM Plex Sans',system-ui,sans-serif;
   --mono:'IBM Plex Mono',monospace;
+
+  /* Popup-specific colors that need to flip in dark mode */
+  --popup-bg:#ffffff;
+  --popup-text:#0a0f1a;
+  --popup-text2:#334155;
+  --popup-border:rgba(0,0,0,0.09);
+  --candidate-dot:#6b7280;
+  --candidate-dot-border:rgba(0,0,0,0.15);
+
+  /* Map tiles */
+  --map-bg:#e8ecef;
+
+  /* Status badges - need separate dark variants */
+  --score-excellent-bg:#d1fae5;
+  --score-excellent-text:#064e3b;
+  --score-good-bg:#dbeafe;
+  --score-good-text:#1e3a8a;
+  --score-fair-bg:#fef3c7;
+  --score-fair-text:#7c2d12;
+  --score-poor-bg:#fee2e2;
+  --score-poor-text:#7f1d1d;
+
+  --custom-badge-bg:#dbeafe;
+  --custom-badge-text:#1e3a8a;
+  --custom-badge-border:#93c5fd;
+  --db-badge-bg:#fed7aa;
+  --db-badge-text:#7c2d12;
+  --db-badge-border:#fdba74;
+
+  --header-bg:#0f1929;
+  --header-text:#ffffff;
+  --header-sub:#cbd5e1;
+
+  /* Toast colors */
+  --toast-bg:#0a0f1a;
+  --toast-text:#ffffff;
+  --toast-border:rgba(255,255,255,0.1);
+
+  /* Tooltip (always dark for legibility on map) */
+  --tooltip-bg:rgba(10,15,26,0.97);
+  --tooltip-text:#ffffff;
+  --tooltip-text2:#e2e8f0;
+  --tooltip-text3:#cbd5e1;
 }
 @media(prefers-color-scheme:dark){
   :root{
-    --bg:#111118;
-    --bg2:#1a1a24;
-    --bg3:#22222e;
-    --bg4:#2a2a3a;
-    --text:#ffffff;
-    --text2:#d1d5db;
-    --text3:#9ca3af;
-    --border:rgba(255,255,255,0.1);
-    --border2:rgba(255,255,255,0.2);
-    --blue-bg:#1e3a8a;
-    --blue-text:#dbeafe;
+    --bg:#0f1119;
+    --bg2:#1a1d29;
+    --bg3:#252836;
+    --bg4:#323545;
+    --text:#f5f7fb;
+    --text2:#cbd5e1;
+    --text3:#94a3b8;
+    --border:rgba(255,255,255,0.09);
+    --border2:rgba(255,255,255,0.18);
+    --blue:#60a5fa;
+    --blue-dark:#3b82f6;
+    --blue-bg:rgba(96,165,250,0.15);
+    --blue-text:#bfdbfe;
     --blue-border:rgba(96,165,250,0.4);
-    --green-bg:#064e3b;
+    --green:#34d399;
+    --green-bg:rgba(52,211,153,0.15);
     --green-text:#a7f3d0;
-    --amber-bg:#78350f;
-    --amber-text:#fed7aa;
-    --red-bg:#7f1d1d;
+    --amber:#fbbf24;
+    --amber-bg:rgba(251,191,36,0.15);
+    --amber-text:#fde68a;
+    --red:#f87171;
+    --red-bg:rgba(248,113,113,0.15);
     --red-text:#fecaca;
-    --purple-bg:#4c1d95;
-    --shadow:0 1px 2px rgba(0,0,0,0.4),0 0 0 1px rgba(0,0,0,0.3);
-    --shadow-md:0 4px 16px rgba(0,0,0,0.4),0 1px 3px rgba(0,0,0,0.3);
+    --purple:#a78bfa;
+    --purple-bg:rgba(167,139,250,0.15);
+    --shadow:0 1px 2px rgba(0,0,0,0.5),0 0 0 1px rgba(0,0,0,0.4);
+    --shadow-md:0 4px 16px rgba(0,0,0,0.5),0 1px 3px rgba(0,0,0,0.4);
+    --shadow-lg:0 20px 48px rgba(0,0,0,0.6),0 4px 8px rgba(0,0,0,0.5);
+
+    /* Popups in dark mode use dark surfaces */
+    --popup-bg:#1a1d29;
+    --popup-text:#f5f7fb;
+    --popup-text2:#cbd5e1;
+    --popup-border:rgba(255,255,255,0.12);
+    --candidate-dot:#94a3b8;
+    --candidate-dot-border:rgba(255,255,255,0.3);
+
+    --map-bg:#0a0d14;
+
+    --score-excellent-bg:rgba(52,211,153,0.18);
+    --score-excellent-text:#a7f3d0;
+    --score-good-bg:rgba(96,165,250,0.18);
+    --score-good-text:#bfdbfe;
+    --score-fair-bg:rgba(251,191,36,0.18);
+    --score-fair-text:#fde68a;
+    --score-poor-bg:rgba(248,113,113,0.18);
+    --score-poor-text:#fecaca;
+
+    --custom-badge-bg:rgba(96,165,250,0.18);
+    --custom-badge-text:#bfdbfe;
+    --custom-badge-border:rgba(96,165,250,0.45);
+    --db-badge-bg:rgba(251,146,60,0.18);
+    --db-badge-text:#fed7aa;
+    --db-badge-border:rgba(251,146,60,0.45);
+
+    --header-bg:#070a14;
+    --header-text:#f5f7fb;
+    --header-sub:#94a3b8;
+
+    --toast-bg:#252836;
+    --toast-text:#f5f7fb;
+    --toast-border:rgba(255,255,255,0.15);
   }
 }
 
@@ -74,7 +158,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 
 /* ── Header ────────────────────────────────────────────────────────── */
 .header{
-  background:#0f1929;
+  background:var(--header-bg);
   border-bottom:1px solid rgba(255,255,255,0.07);
   padding:0 28px;
   display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
@@ -90,8 +174,8 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
   box-shadow:0 2px 10px rgba(37,99,235,0.45);
 }
 .logo svg{width:18px;height:18px;fill:none;stroke:#fff;stroke-width:2;}
-.header h1{font-size:14px;font-weight:600;color:#ffffff;letter-spacing:-.01em;}
-.header .sub{font-size:11px;color:#cbd5e1;margin-top:1px;font-weight:400;}
+.header h1{font-size:14px;font-weight:600;color:var(--header-text);letter-spacing:-.01em;}
+.header .sub{font-size:11px;color:var(--header-sub);margin-top:1px;font-weight:400;}
 .header-badge{
   font-size:11px;padding:4px 12px;border-radius:20px;
   background:rgba(37,99,235,0.25);color:#bfdbfe;
@@ -158,6 +242,9 @@ button:disabled{opacity:.4;cursor:not-allowed;transform:none;}
   background:var(--blue);color:#fff;border-color:var(--blue);font-weight:600;
   box-shadow:0 1px 4px rgba(37,99,235,0.28);
 }
+@media(prefers-color-scheme:dark){
+  .btn-primary{color:#0a0f1a;}
+}
 .btn-primary:hover{
   background:var(--blue-dark);border-color:var(--blue-dark);
   box-shadow:0 4px 14px rgba(37,99,235,0.38);transform:translateY(-1px);
@@ -170,6 +257,9 @@ button:disabled{opacity:.4;cursor:not-allowed;transform:none;}
 .btn-ghost:hover{background:var(--bg3);}
 .btn-success{background:var(--green-bg);color:var(--green-text);border-color:rgba(4,120,87,.3);font-weight:600;}
 .btn-success:hover{background:#d1fae5;}
+@media(prefers-color-scheme:dark){
+  .btn-success:hover{background:rgba(52,211,153,0.25);}
+}
 
 /* ── Inputs ─────────────────────────────────────────────────────────── */
 input,select{
@@ -184,7 +274,7 @@ input[type=range]:focus{box-shadow:none;}
 .field-error{font-size:12px;color:var(--red);margin-top:4px;font-weight:500;}
 
 /* ── Tables ─────────────────────────────────────────────────────────── */
-.tbl-wrap{border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;margin-bottom:14px;}
+.tbl-wrap{border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;margin-bottom:14px;background:var(--bg2);}
 table{width:100%;border-collapse:collapse;font-size:12.5px;}
 thead tr{background:var(--bg3);border-bottom:1px solid var(--border2);}
 th{padding:10px 12px;text-align:left;font-weight:700;color:var(--text);font-size:10.5px;white-space:nowrap;letter-spacing:.05em;text-transform:uppercase;}
@@ -194,7 +284,10 @@ tr.top-row td{background:var(--blue-bg);}
 tr.top-row td.name-cell{color:var(--blue-text);font-weight:700;}
 tr.top-row td{color:var(--blue-text);font-weight:500;}
 tr:hover td{background:var(--bg3);}
-tr.top-row:hover td{background:#ddeaff;}
+tr.top-row:hover td{background:var(--blue-bg);filter:brightness(1.05);}
+@media(prefers-color-scheme:dark){
+  tr.top-row:hover td{filter:brightness(1.2);}
+}
 .mono{font-family:var(--mono);font-size:11.5px;font-weight:500;color:var(--text);}
 td .mono{color:var(--text2);}
 tr.top-row td .mono{color:var(--blue-text);font-weight:600;}
@@ -228,7 +321,7 @@ tr.top-row td .mono{color:var(--blue-text);font-weight:600;}
 }
 .map-canvas{
   width:100%;height:460px;
-  background:var(--bg3);
+  background:var(--map-bg);
 }
 .map-canvas.short{height:380px;}
 .map-legend{
@@ -247,15 +340,14 @@ tr.top-row td .mono{color:var(--blue-text);font-weight:600;}
   background:transparent;border:none;color:var(--text2);cursor:pointer;
   font-weight:500;
 }
-.map-style-btn:hover{color:var(--text);background:rgba(0,0,0,0.04);}
+.map-style-btn:hover{color:var(--text);background:var(--bg4);}
 .map-style-btn.active{background:var(--bg2);color:var(--text);box-shadow:0 1px 2px rgba(0,0,0,0.1);font-weight:600;}
 
 /* Leaflet overrides */
-.leaflet-container{font-family:var(--font) !important;background:#e8ecef;}
-.leaflet-container.dark-tiles{background:#1a1f28;}
+.leaflet-container{font-family:var(--font) !important;background:var(--map-bg);}
 .leaflet-control-zoom{border:none !important;box-shadow:var(--shadow-md) !important;border-radius:var(--radius) !important;overflow:hidden;}
 .leaflet-control-zoom a{
-  background:rgba(255,255,255,0.98) !important;
+  background:var(--bg2) !important;
   border:1px solid var(--border2) !important;
   color:var(--text) !important;
   font-weight:700 !important;
@@ -263,13 +355,13 @@ tr.top-row td .mono{color:var(--blue-text);font-weight:600;}
   backdrop-filter:blur(4px);
   transition:background .15s;
 }
-.leaflet-control-zoom a:hover{background:#fff !important;color:var(--blue) !important;}
+.leaflet-control-zoom a:hover{background:var(--bg3) !important;color:var(--blue) !important;}
 .leaflet-control-zoom a:first-child{border-bottom:none !important;border-top-left-radius:var(--radius) !important;border-top-right-radius:var(--radius) !important;}
 .leaflet-control-zoom a:last-child{border-bottom-left-radius:var(--radius) !important;border-bottom-right-radius:var(--radius) !important;}
 .leaflet-reset-control{border:none !important;box-shadow:var(--shadow-md) !important;border-radius:var(--radius) !important;overflow:hidden;margin-top:0 !important;}
 .leaflet-reset-control a{
   width:30px !important;height:30px !important;line-height:30px !important;
-  background:rgba(255,255,255,0.98) !important;
+  background:var(--bg2) !important;
   border:1px solid var(--border2) !important;
   color:var(--text) !important;
   display:flex !important;align-items:center;justify-content:center;
@@ -277,28 +369,42 @@ tr.top-row td .mono{color:var(--blue-text);font-weight:600;}
   transition:background .15s, color .15s;
   border-radius:var(--radius) !important;
 }
-.leaflet-reset-control a:hover{background:#fff !important;color:var(--blue) !important;}
+.leaflet-reset-control a:hover{background:var(--bg3) !important;color:var(--blue) !important;}
 .leaflet-control-attribution{
   background:rgba(255,255,255,0.95) !important;
   font-size:10.5px !important;
   padding:2px 6px !important;
-  color:var(--text2) !important;
+  color:#334155 !important;
   border-top-left-radius:4px !important;
   font-weight:500;
 }
-.leaflet-control-attribution a{color:var(--text) !important;}
+@media(prefers-color-scheme:dark){
+  .leaflet-control-attribution{
+    background:rgba(15,17,25,0.92) !important;
+    color:#cbd5e1 !important;
+  }
+  .leaflet-control-attribution a{color:#bfdbfe !important;}
+}
+.leaflet-control-attribution a{color:#0a0f1a !important;}
+
+/* Popups */
 .leaflet-popup-content-wrapper{
   border-radius:var(--radius-lg) !important;
   box-shadow:var(--shadow-lg) !important;
-  border:1px solid var(--border) !important;
+  border:1px solid var(--popup-border) !important;
   padding:0 !important;
-  background:#ffffff !important;
+  background:var(--popup-bg) !important;
+  color:var(--popup-text) !important;
 }
-.leaflet-popup-content{margin:0 !important;padding:12px 14px !important;font-family:var(--font) !important;min-width:180px;color:#0a0f1a !important;}
-.leaflet-popup-tip{box-shadow:var(--shadow-md) !important;background:#ffffff !important;}
+.leaflet-popup-content{margin:0 !important;padding:12px 14px !important;font-family:var(--font) !important;min-width:180px;color:var(--popup-text) !important;}
+.leaflet-popup-tip{box-shadow:var(--shadow-md) !important;background:var(--popup-bg) !important;}
+.leaflet-popup-close-button{color:var(--popup-text2) !important;}
+.leaflet-popup-close-button:hover{color:var(--popup-text) !important;}
+
+/* Candidate tooltips - always dark for visibility on any tile style */
 .candidate-tooltip{
-  background:rgba(10,15,26,0.97) !important;
-  color:#ffffff !important;
+  background:var(--tooltip-bg) !important;
+  color:var(--tooltip-text) !important;
   border:none !important;
   border-radius:var(--radius-lg) !important;
   box-shadow:var(--shadow-lg) !important;
@@ -309,15 +415,19 @@ tr.top-row td .mono{color:var(--blue-text);font-weight:600;}
   pointer-events:none;
   font-weight:500;
 }
-.candidate-tooltip::before{border-top-color:rgba(10,15,26,0.97) !important;}
-.candidate-tooltip .popup-title{color:#ffffff !important;font-size:12.5px;margin-bottom:5px;font-weight:700;}
-.candidate-tooltip .popup-row{color:#e2e8f0 !important;font-size:11px;font-weight:500;}
-.candidate-tooltip .popup-row strong{color:#ffffff !important;font-weight:700;}
-.popup-title{font-size:14px;font-weight:700;color:#0a0f1a;margin-bottom:8px;letter-spacing:-.01em;}
-.popup-row{font-size:12px;color:#334155;display:flex;justify-content:space-between;gap:12px;padding:3px 0;font-weight:500;}
-.popup-row strong{color:#0a0f1a;font-family:var(--mono);font-weight:600;}
-.popup-row span{color:#334155;}
+.candidate-tooltip::before{border-top-color:var(--tooltip-bg) !important;}
+.candidate-tooltip .popup-title{color:var(--tooltip-text) !important;font-size:12.5px;margin-bottom:5px;font-weight:700;}
+.candidate-tooltip .popup-row{color:var(--tooltip-text2) !important;font-size:11px;font-weight:500;}
+.candidate-tooltip .popup-row strong{color:var(--tooltip-text) !important;font-weight:700;}
+
+/* Regular popup content uses theme colors */
+.popup-title{font-size:14px;font-weight:700;color:var(--popup-text);margin-bottom:8px;letter-spacing:-.01em;}
+.popup-row{font-size:12px;color:var(--popup-text2);display:flex;justify-content:space-between;gap:12px;padding:3px 0;font-weight:500;}
+.popup-row strong{color:var(--popup-text);font-family:var(--mono);font-weight:600;}
+.popup-row span{color:var(--popup-text2);}
 .popup-badge{display:inline-block;font-size:10px;padding:3px 8px;border-radius:20px;font-weight:700;letter-spacing:.04em;margin-bottom:8px;}
+.popup-assigned{font-size:11px;color:var(--popup-text2);margin-top:8px;padding-top:8px;border-top:1px solid var(--popup-border);line-height:1.55;font-weight:500;}
+.popup-assigned em{color:var(--popup-text);font-style:normal;font-weight:600;}
 
 /* Custom marker styles */
 .supplier-marker{
@@ -348,6 +458,9 @@ tr.top-row td .mono{color:var(--blue-text);font-weight:600;}
   box-shadow:0 1px 3px rgba(0,0,0,0.25);
   pointer-events:none;
 }
+@media(prefers-color-scheme:dark){
+  .wh-marker-label{background:rgba(26,29,41,0.98);box-shadow:0 1px 3px rgba(0,0,0,0.5);}
+}
 
 /* ── Weights ─────────────────────────────────────────────────────────── */
 .weight-row{margin-bottom:18px;}
@@ -377,25 +490,32 @@ tr.top-row td .mono{color:var(--blue-text);font-weight:600;}
 .mode-btn-sub{font-size:11.5px;color:var(--text2);line-height:1.6;font-weight:400;}
 .mode-btn.active .mode-btn-sub{color:var(--blue-text);}
 .mode-btn-badge{display:inline-block;font-size:10.5px;font-weight:700;padding:2px 8px;border-radius:20px;margin-bottom:7px;background:var(--bg4);color:var(--text);letter-spacing:.02em;align-self:flex-start;}
-.mode-btn.active .mode-btn-badge{background:rgba(37,99,235,0.2);color:var(--blue-text);}
+.mode-btn.active .mode-btn-badge{background:var(--blue-bg);color:var(--blue-text);border:1px solid var(--blue-border);}
 
 /* ── WH count ────────────────────────────────────────────────────────── */
 .wh-count-row{display:flex;gap:8px;}
 .wh-count-btn{width:44px;height:44px;font-size:16px;font-weight:700;border-radius:var(--radius-lg);padding:0;display:flex;align-items:center;justify-content:center;transition:all .15s ease;color:var(--text);}
 .wh-count-btn.active{background:var(--blue);color:#fff;border-color:var(--blue);box-shadow:0 2px 8px rgba(37,99,235,0.3);}
+@media(prefers-color-scheme:dark){
+  .wh-count-btn.active{color:#0a0f1a;}
+}
 
 /* ── Alerts ──────────────────────────────────────────────────────────── */
 .alert{padding:12px 16px;border-radius:var(--radius-lg);font-size:12.5px;line-height:1.7;margin-bottom:14px;display:flex;align-items:flex-start;gap:10px;font-weight:500;}
 .alert-icon{flex-shrink:0;font-size:14px;margin-top:1px;}
 .alert-info{background:var(--blue-bg);border:1px solid var(--blue-border);color:var(--blue-text);}
 .alert-warn{background:var(--amber-bg);border:1px solid rgba(194,65,12,.25);color:var(--amber-text);}
+@media(prefers-color-scheme:dark){
+  .alert-warn{border-color:rgba(251,191,36,0.35);}
+}
+.alert a{color:var(--blue-text);text-decoration:underline;font-weight:700;}
 
 /* ── Score ───────────────────────────────────────────────────────────── */
 .score-badge{display:inline-flex;align-items:center;gap:4px;padding:3px 9px;border-radius:20px;font-size:11.5px;font-weight:700;}
-.score-excellent{background:#d1fae5;color:#064e3b;}
-.score-good{background:#dbeafe;color:#1e3a8a;}
-.score-fair{background:#fef3c7;color:#7c2d12;}
-.score-poor{background:#fee2e2;color:#7f1d1d;}
+.score-excellent{background:var(--score-excellent-bg);color:var(--score-excellent-text);}
+.score-good{background:var(--score-good-bg);color:var(--score-good-text);}
+.score-fair{background:var(--score-fair-bg);color:var(--score-fair-text);}
+.score-poor{background:var(--score-poor-bg);color:var(--score-poor-text);}
 .score-bar-track{flex:1;height:5px;background:var(--bg4);border-radius:3px;min-width:40px;overflow:hidden;}
 .score-bar-fill{height:5px;border-radius:3px;transition:width .4s ease;}
 
@@ -427,20 +547,30 @@ tr.top-row td .mono{color:var(--blue-text);font-weight:600;}
 
 /* ── Toast ───────────────────────────────────────────────────────────── */
 #toastContainer{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:9999;display:flex;flex-direction:column;gap:8px;pointer-events:none;}
-.toast{background:#0a0f1a;color:#fff;padding:12px 18px;border-radius:var(--radius-lg);font-size:13px;display:flex;align-items:center;gap:12px;box-shadow:var(--shadow-lg);pointer-events:all;animation:toastIn .25s ease;white-space:nowrap;border:1px solid rgba(255,255,255,0.1);font-weight:500;}
+.toast{background:var(--toast-bg);color:var(--toast-text);padding:12px 18px;border-radius:var(--radius-lg);font-size:13px;display:flex;align-items:center;gap:12px;box-shadow:var(--shadow-lg);pointer-events:all;animation:toastIn .25s ease;white-space:nowrap;border:1px solid var(--toast-border);font-weight:500;}
 .toast.out{animation:toastOut .25s ease forwards;}
-.toast-undo{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,.3);color:#fff;padding:4px 11px;font-size:12px;cursor:pointer;border-radius:4px;font-weight:600;}
+.toast-undo{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,.3);color:var(--toast-text);padding:4px 11px;font-size:12px;cursor:pointer;border-radius:4px;font-weight:600;}
 .toast-undo:hover{background:rgba(255,255,255,0.25);}
 @keyframes toastIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
 @keyframes toastOut{to{opacity:0;transform:translateY(8px);}}
 
 /* ── Normalize alert ─────────────────────────────────────────────────── */
 .normalize-alert{background:var(--amber-bg);border:1px solid rgba(194,65,12,.25);border-radius:var(--radius-lg);padding:10px 14px;margin-bottom:14px;display:flex;align-items:center;gap:12px;font-size:12.5px;color:var(--amber-text);font-weight:500;}
-.normalize-alert button{font-size:12px;padding:4px 12px;background:var(--amber-text);color:#fff;border:none;border-radius:var(--radius);font-weight:600;}
+@media(prefers-color-scheme:dark){
+  .normalize-alert{border-color:rgba(251,191,36,0.35);}
+}
+.normalize-alert button{font-size:12px;padding:4px 12px;background:var(--amber);color:#fff;border:none;border-radius:var(--radius);font-weight:600;}
+@media(prefers-color-scheme:dark){
+  .normalize-alert button{color:#0a0f1a;}
+}
 
 /* ── Export row ──────────────────────────────────────────────────────── */
 .export-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px;}
 .export-row .btn-primary{padding:9px 22px;font-size:13px;}
+
+/* ── Status badges (Database/Custom) ────────────────────────────────── */
+.type-badge-custom{font-size:10.5px;padding:2px 8px;border-radius:20px;background:var(--custom-badge-bg);color:var(--custom-badge-text);border:1px solid var(--custom-badge-border);font-weight:700;}
+.type-badge-db{font-size:10.5px;padding:2px 8px;border-radius:20px;background:var(--db-badge-bg);color:var(--db-badge-text);border:1px solid var(--db-badge-border);font-weight:700;}
 
 /* ── Utility ─────────────────────────────────────────────────────────── */
 .row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;}
@@ -455,7 +585,7 @@ tr.top-row td .mono{color:var(--blue-text);font-weight:600;}
   .header{position:static;background:#fff;height:auto;padding:12px 24px;}
   .header h1,.header .sub{color:#000;}
   .header-badge{background:#eee;color:#000;}
-  body{background:white;}
+  body{background:white;color:#000;}
   .container{padding:12px;max-width:100%;}
   .card{break-inside:avoid;box-shadow:none;}
   .map-canvas{height:360px;}
@@ -508,9 +638,6 @@ tr.top-row td .mono{color:var(--blue-text);font-weight:600;}
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
 // ─── City data — CONTIGUOUS 48 STATES ONLY ────────────────────────────────────
-// Hawaii and Alaska excluded: their geographic isolation creates nonsensical
-// multi-warehouse recommendations (e.g. seeding a warehouse in Honolulu because
-// it's the "most distant" candidate, even though no mainland supplier benefits).
 const CITIES_MAJOR=[
   {name:"Atlanta",state:"GA",lat:33.749,lng:-84.388,pop:6.1,labor:0.90,land:0.80},
   {name:"Austin",state:"TX",lat:30.268,lng:-97.740,pop:2.3,labor:0.97,land:0.92},
@@ -655,7 +782,7 @@ const CITIES_EXTRA=[
   {name:"Annapolis",state:"MD",lat:38.979,lng:-76.490,pop:0.10,labor:1.02,land:1.10},
 ];
 
-const WH_COLORS = ["#2563eb","#059669","#d97706","#7c3aed","#dc2626"];
+const WH_COLORS = ["#3b82f6","#10b981","#f59e0b","#a78bfa","#f87171"];
 
 function getCandidateCities(){
   if(state.candidateMode==='all'){
@@ -663,6 +790,11 @@ function getCandidateCities(){
     return [...CITIES_MAJOR,...CITIES_EXTRA.filter(c=>!seen.has(c.name+c.state))];
   }
   return CITIES_MAJOR;
+}
+
+// Detect dark mode at runtime — used for marker colors and tile defaults
+function isDarkMode(){
+  return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 }
 
 // ─── Leaflet Map Manager ──────────────────────────────────────────────────────
@@ -693,16 +825,8 @@ const TILE_STYLES = {
 
 let currentMap = null;
 let currentTileLayer = null;
-let preferredTileStyle = 'light';
-
-function isDarkMode(){
-  return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-}
-
-function effectiveTileStyle(){
-  if(preferredTileStyle === 'light' && isDarkMode()) return 'dark';
-  return preferredTileStyle;
-}
+// In dark mode, default to dark tiles. User can still override via toggle.
+let preferredTileStyle = isDarkMode() ? 'dark' : 'light';
 
 function destroyCurrentMap(){
   if(currentMap){
@@ -716,22 +840,27 @@ function buildSupplierIcon(sup, maxDemand){
   const ratio = sup.demand / (maxDemand || 1);
   const size = 12 + ratio * 18;
   const color = sup.isCustom ? '#3b82f6' : '#f97316';
-  const shadowCol = sup.isCustom ? 'rgba(59,130,246,0.35)' : 'rgba(249,115,22,0.35)';
+  const shadowCol = sup.isCustom ? 'rgba(59,130,246,0.4)' : 'rgba(249,115,22,0.4)';
+  // Border color flips for visibility on dark tiles
+  const borderColor = isDarkMode() && (preferredTileStyle === 'dark' || preferredTileStyle === 'light') ? '#1a1d29' : '#fff';
   return L.divIcon({
     className: '',
-    html: `<div style="width:${size}px;height:${size}px;border-radius:50%;background:${color};border:2.5px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,0.3),0 0 0 ${Math.max(2,ratio*6)}px ${shadowCol};"></div>`,
+    html: `<div style="width:${size}px;height:${size}px;border-radius:50%;background:${color};border:2.5px solid ${borderColor};box-shadow:0 2px 6px rgba(0,0,0,0.5),0 0 0 ${Math.max(2,ratio*6)}px ${shadowCol};"></div>`,
     iconSize: [size, size],
     iconAnchor: [size/2, size/2],
   });
 }
 
 function buildWarehouseIcon(color, name, idx){
+  const labelBg = isDarkMode() ? 'rgba(26,29,41,0.98)' : 'rgba(255,255,255,0.98)';
+  const labelShadow = isDarkMode() ? '0 1px 3px rgba(0,0,0,0.5)' : '0 1px 3px rgba(0,0,0,0.25)';
+  const coreBorder = isDarkMode() ? '#1a1d29' : '#fff';
   return L.divIcon({
     className: '',
     html: `<div class="wh-marker-wrap">
       <div class="wh-marker-pulse" style="width:16px;height:16px;background:${color};"></div>
-      <div class="wh-marker-label" style="color:${color};border:1px solid ${color};">WH${idx+1} · ${name}</div>
-      <div class="wh-marker-core" style="background:${color};"></div>
+      <div class="wh-marker-label" style="color:${color};border:1px solid ${color};background:${labelBg};box-shadow:${labelShadow};">WH${idx+1} · ${name}</div>
+      <div class="wh-marker-core" style="background:${color};border-color:${coreBorder};"></div>
     </div>`,
     iconSize: [16, 16],
     iconAnchor: [8, 8],
@@ -739,10 +868,12 @@ function buildWarehouseIcon(color, name, idx){
 }
 
 function buildCandidateIcon(){
+  const dotColor = isDarkMode() ? '#94a3b8' : '#6b7280';
+  const dotBorder = isDarkMode() ? 'rgba(255,255,255,0.3)' : 'rgba(0,0,0,0.15)';
   return L.divIcon({
     className: '',
     html: `<div style="width:20px;height:20px;display:flex;align-items:center;justify-content:center;cursor:pointer;">
-      <div style="width:5px;height:5px;border-radius:50%;background:#6b7280;opacity:0.65;border:1px solid rgba(0,0,0,0.15);transition:transform .12s ease, opacity .12s ease;"></div>
+      <div style="width:5px;height:5px;border-radius:50%;background:${dotColor};opacity:0.7;border:1px solid ${dotBorder};transition:transform .12s ease, opacity .12s ease;"></div>
     </div>`,
     iconSize: [20,20],
     iconAnchor: [10, 10],
@@ -751,8 +882,8 @@ function buildCandidateIcon(){
 
 function supplierPopup(sup){
   const typeBadge = sup.isCustom
-    ? `<span class="popup-badge" style="background:#dbeafe;color:#1e3a8a;border:1px solid #93c5fd;">CUSTOM ADDRESS</span>`
-    : `<span class="popup-badge" style="background:#fed7aa;color:#7c2d12;border:1px solid #fdba74;">DATABASE CITY</span>`;
+    ? `<span class="popup-badge type-badge-custom" style="margin-bottom:8px;">CUSTOM ADDRESS</span>`
+    : `<span class="popup-badge type-badge-db" style="margin-bottom:8px;">DATABASE CITY</span>`;
   return `${typeBadge}
     <div class="popup-title">${sup.name}</div>
     <div class="popup-row"><span>Annual demand</span><strong>${Number(sup.demand).toLocaleString()} units</strong></div>
@@ -763,14 +894,14 @@ function supplierPopup(sup){
 function warehousePopup(wh, idx){
   const servedDemand = wh.suppliers.reduce((s,x)=>s+x.demand,0);
   const supList = wh.suppliers.map(s=>s.name).join(', ') || '—';
-  return `<span class="popup-badge" style="background:${WH_COLORS[idx]}2a;color:${WH_COLORS[idx]};border:1px solid ${WH_COLORS[idx]}66;">WAREHOUSE ${idx+1}</span>
+  return `<span class="popup-badge" style="background:${WH_COLORS[idx]}33;color:${WH_COLORS[idx]};border:1px solid ${WH_COLORS[idx]}66;">WAREHOUSE ${idx+1}</span>
     <div class="popup-title">${wh.city.name}, ${wh.city.state}</div>
     <div class="popup-row"><span>Serves</span><strong>${wh.suppliers.length} location${wh.suppliers.length!==1?'s':''}</strong></div>
     <div class="popup-row"><span>Total demand</span><strong>${servedDemand.toLocaleString()} units</strong></div>
     <div class="popup-row"><span>Labor index</span><strong>${wh.city.labor.toFixed(2)}×</strong></div>
     <div class="popup-row"><span>Land index</span><strong>${wh.city.land.toFixed(2)}×</strong></div>
     <div class="popup-row"><span>Metro pop</span><strong>${wh.city.pop.toFixed(1)}M</strong></div>
-    <div style="font-size:11px;color:#334155;margin-top:8px;padding-top:8px;border-top:1px solid var(--border);line-height:1.55;font-weight:500;"><em style="color:#0a0f1a;">Assigned:</em> ${supList}</div>`;
+    <div class="popup-assigned"><em>Assigned:</em> ${supList}</div>`;
 }
 
 function candidatePopup(city){
@@ -806,14 +937,12 @@ function renderMap(containerId, suppliers, warehouses, candidateCities, opts){
   }).setView([39.5, -98.35], 4);
   currentMap = map;
 
-  const styleKey = effectiveTileStyle();
-  const cfg = TILE_STYLES[styleKey];
+  const cfg = TILE_STYLES[preferredTileStyle];
   currentTileLayer = L.tileLayer(cfg.url, {
     attribution: cfg.attribution,
     maxZoom: cfg.maxZoom,
     subdomains: cfg.subdomains || 'abc',
   }).addTo(map);
-  el.classList.toggle('dark-tiles', styleKey === 'dark');
 
   if(opts.showCandidates && candidateCities && candidateCities.length){
     const candLayer = L.layerGroup();
@@ -839,6 +968,8 @@ function renderMap(containerId, suppliers, warehouses, candidateCities, opts){
     candLayer.addTo(map);
   }
 
+  // Connection lines — slightly more opaque on dark tiles
+  const lineOpacity = (preferredTileStyle === 'dark' || (preferredTileStyle === 'satellite')) ? 0.75 : 0.55;
   if(warehouses && warehouses.length){
     warehouses.forEach((wh, widx) => {
       if(!wh.city) return;
@@ -847,7 +978,7 @@ function renderMap(containerId, suppliers, warehouses, candidateCities, opts){
         L.polyline([[wh.city.lat, wh.city.lng], [sup.lat, sup.lng]], {
           color: color,
           weight: 1.8,
-          opacity: 0.55,
+          opacity: lineOpacity,
           dashArray: '6, 5',
           lineCap: 'round',
         }).addTo(map);
@@ -931,7 +1062,7 @@ function buildLegend(warehouses, hasCustom, opts){
   let items = `<div class="map-legend-item"><span class="legend-dot" style="background:#f97316;"></span>Supplier (size = demand)</div>`;
   if(hasCustom) items += `<div class="map-legend-item"><span class="legend-dot" style="background:#3b82f6;"></span>Custom address</div>`;
   if(!warehouses || !warehouses.length){
-    if(opts.showCandidates) items += `<div class="map-legend-item"><span class="legend-dot" style="background:#6b7280;opacity:.65;width:6px;height:6px;"></span>Candidate city (hover)</div>`;
+    if(opts.showCandidates) items += `<div class="map-legend-item"><span class="legend-dot" style="background:${isDarkMode()?'#94a3b8':'#6b7280'};opacity:.7;width:6px;height:6px;"></span>Candidate city (hover)</div>`;
   } else {
     warehouses.forEach((wh, i) => {
       items += `<div class="map-legend-item"><span class="legend-dot" style="background:${WH_COLORS[i]};"></span>${wh.city.name} (WH ${i+1})</div>`;
@@ -940,6 +1071,7 @@ function buildLegend(warehouses, hasCustom, opts){
 
   const styles = [
     {k:'light', label:'Light'},
+    {k:'dark', label:'Dark'},
     {k:'terrain', label:'Terrain'},
     {k:'satellite', label:'Satellite'},
   ];
@@ -957,22 +1089,23 @@ document.addEventListener('click', function(e){
   if(newStyle === preferredTileStyle) return;
   preferredTileStyle = newStyle;
 
-  if(currentMap && currentTileLayer){
-    const styleKey = effectiveTileStyle();
-    const cfg = TILE_STYLES[styleKey];
-    currentMap.removeLayer(currentTileLayer);
-    currentTileLayer = L.tileLayer(cfg.url, {
-      attribution: cfg.attribution,
-      maxZoom: cfg.maxZoom,
-      subdomains: cfg.subdomains || 'abc',
-    }).addTo(currentMap);
-    const mapEl = currentMap.getContainer();
-    mapEl.classList.toggle('dark-tiles', styleKey === 'dark');
-  }
-  document.querySelectorAll('.map-style-btn').forEach(b=>{
-    b.classList.toggle('active', b.dataset.tile === newStyle);
-  });
+  // Full re-render so markers (which depend on dark/light context) update too
+  render();
 });
+
+// Listen for OS dark mode changes — re-render the page so colors stay in sync
+if(window.matchMedia){
+  const mql = window.matchMedia('(prefers-color-scheme: dark)');
+  const onChange = () => {
+    // Auto-flip default tile style when the user hasn't manually overridden
+    // (We always re-render to refresh marker borders & dot colors.)
+    if(preferredTileStyle === 'light' && isDarkMode()) preferredTileStyle = 'dark';
+    else if(preferredTileStyle === 'dark' && !isDarkMode()) preferredTileStyle = 'light';
+    render();
+  };
+  if(mql.addEventListener) mql.addEventListener('change', onChange);
+  else if(mql.addListener) mql.addListener(onChange);
+}
 
 // ─── Algorithms ───────────────────────────────────────────────────────────────
 function haversine(la1,lo1,la2,lo2){const R=6371,dLa=(la2-la1)*Math.PI/180,dLo=(lo2-lo1)*Math.PI/180;const a=Math.sin(dLa/2)**2+Math.cos(la1*Math.PI/180)*Math.cos(la2*Math.PI/180)*Math.sin(dLo/2)**2;return R*2*Math.atan2(Math.sqrt(a),Math.sqrt(1-a));}
@@ -992,30 +1125,15 @@ function scoreAll(sups,cities,w){
   }).sort((a,b)=>a.composite-b.composite);
 }
 
-/*
-  multiWH — iterative K-medoids cluster assignment for multi-warehouse networks.
-  Seeds centers using a weighted-demand farthest-point heuristic (biased toward
-  real supplier density so we don't pick isolated outliers), then alternates
-  between: (1) assigning every supplier to its nearest candidate center, and
-  (2) re-scoring each cluster to pick the best city for it. Iterates until
-  assignments stabilize. Empty clusters are dropped and k is reduced — we'd
-  rather return 2 real warehouses than 3 including a useless one.
-*/
 function multiWH(sups,cities,k,w){
   if(!sups.length) return[];
   k=Math.min(k,sups.length);
   const scored=scoreAll(sups,cities,w);
   if(k===1) return[{city:scored[0],suppliers:sups}];
 
-  // Seed 1: best overall single-WH pick
   let centers=[scored[0]];
 
-  // Seeds 2..k: pick the candidate whose closest existing center is farthest
-  // from the *demand-weighted centroid of unserved suppliers*, not just from
-  // other centers. This keeps seeds inside the supplier cloud instead of
-  // wandering off to geographic extremes.
   while(centers.length<k){
-    // Assign suppliers to nearest existing center
     const tempClusters=centers.map(()=>[]);
     sups.forEach(sup=>{
       let mi=0,md=Infinity;
@@ -1025,22 +1143,18 @@ function multiWH(sups,cities,k,w){
       });
       tempClusters[mi].push(sup);
     });
-    // Find the cluster with highest total unserved cost (demand × distance)
     let worstClusterIdx=0,worstCost=-1;
     tempClusters.forEach((cluster,i)=>{
       const cost=cluster.reduce((s,sup)=>s+sup.demand*roadDist(centers[i].lat,centers[i].lng,sup.lat,sup.lng),0);
       if(cost>worstCost){worstCost=cost;worstClusterIdx=i;}
     });
-    // Seed a new center by scoring the worst cluster
     const worstCluster=tempClusters[worstClusterIdx];
     if(!worstCluster.length){break;}
     const bestForCluster=scoreAll(worstCluster,cities,w)[0];
-    // Avoid duplicates
     if(centers.some(c=>c.name===bestForCluster.name&&c.state===bestForCluster.state)){break;}
     centers.push(bestForCluster);
   }
 
-  // Iterative refinement
   for(let iter=0;iter<30;iter++){
     const cls=centers.map(()=>[]);
     sups.forEach(sup=>{
@@ -1053,11 +1167,10 @@ function multiWH(sups,cities,k,w){
     });
     const nc=cls.map((cs,i)=>cs.length?scoreAll(cs,cities,w)[0]:null);
     const changed=nc.some((c,i)=>c===null||!centers[i]||c.name!==centers[i].name);
-    centers=nc.filter(c=>c!==null); // drop empty clusters
+    centers=nc.filter(c=>c!==null);
     if(!centers.length||!changed)break;
   }
 
-  // Final assignment
   const cls=centers.map(()=>[]);
   sups.forEach(sup=>{
     let mi=0,md=Infinity;
@@ -1068,12 +1181,23 @@ function multiWH(sups,cities,k,w){
     cls[mi].push(sup);
   });
 
-  // Filter out any warehouses that somehow ended up empty
   return centers.map((city,i)=>({city,suppliers:cls[i]})).filter(wh=>wh.suppliers.length>0);
 }
 
 function scoreLabel(s){if(s>=80)return{cls:'score-excellent',text:'Excellent'};if(s>=65)return{cls:'score-good',text:'Good'};if(s>=50)return{cls:'score-fair',text:'Fair'};return{cls:'score-poor',text:'Poor'};}
-function scoreBarColor(s){if(s>=80)return'#059669';if(s>=65)return'#2563eb';if(s>=50)return'#d97706';return'#dc2626';}
+function scoreBarColor(s){
+  // Slightly brighter colors in dark mode for better visibility on dark tracks
+  if(isDarkMode()){
+    if(s>=80)return'#34d399';
+    if(s>=65)return'#60a5fa';
+    if(s>=50)return'#fbbf24';
+    return'#f87171';
+  }
+  if(s>=80)return'#059669';
+  if(s>=65)return'#2563eb';
+  if(s>=50)return'#d97706';
+  return'#dc2626';
+}
 
 function showToast(msg,undoFn){
   const tc=document.getElementById('toastContainer');
@@ -1163,8 +1287,8 @@ function buildStep1(){
         },0);
       } else {
         const typeBadge=s.isCustom
-          ?`<span style="font-size:10.5px;padding:2px 8px;border-radius:20px;background:#dbeafe;color:#1e3a8a;border:1px solid #93c5fd;font-weight:700;">Custom</span>`
-          :`<span style="font-size:10.5px;padding:2px 8px;border-radius:20px;background:#fed7aa;color:#7c2d12;border:1px solid #fdba74;font-weight:700;">Database</span>`;
+          ?`<span class="type-badge-custom">Custom</span>`
+          :`<span class="type-badge-db">Database</span>`;
         tr.innerHTML=`<td class="name-cell">${s.name}</td><td class="mono">${Number(s.lat).toFixed(3)}</td><td class="mono">${Number(s.lng).toFixed(3)}</td><td>${Number(s.demand).toLocaleString()} units</td><td>${typeBadge}</td><td class="action-cell"><button class="btn-sm btn-ghost" data-edit="${s.id}">Edit</button><button class="btn-sm btn-danger" data-del="${s.id}">Remove</button></td>`;
         tbody.appendChild(tr);
         tr.querySelector(`[data-edit="${s.id}"]`).onclick=()=>{state.editingId=s.id;render();};
@@ -1196,7 +1320,6 @@ function buildStep1(){
     sel.value='';render();showToast(`Added ${city.name}, ${city.state}`);
   };
 
-  // Add by address — now restricted to contiguous 48
   const man=document.createElement('div');man.className='card';
   man.innerHTML=`<div class="card-title">Add by address <span style="font-size:11px;font-weight:600;color:var(--blue);margin-left:6px;text-transform:none;letter-spacing:0;">🇺🇸 Contiguous 48 states only</span></div>
     <div class="row" style="flex-wrap:wrap;gap:8px;align-items:flex-start;">
@@ -1216,12 +1339,8 @@ function buildStep1(){
   function clearSelection(){selectedPlace=null;addBtn.disabled=true;coordsEl.style.display='none';}
   function showAddressError(msg){errEl.textContent=msg;errEl.style.display='block';clearSelection();suggestionsEl.style.display='none';}
 
-  // Check if coordinates fall in contiguous 48 (excludes AK, HI, territories)
   function isContiguous48(lat,lng,state){
-    // Quick state-code check first
     if(state==='AK'||state==='HI'||state==='PR'||state==='VI'||state==='GU'||state==='MP'||state==='AS') return false;
-    // Bounding box check as backup
-    // Contiguous 48: roughly lat 24.5-49.5, lng -125 to -66.5
     if(lat<24.5||lat>49.5) return false;
     if(lng<-125||lng>-66.5) return false;
     return true;
@@ -1253,7 +1372,6 @@ function buildStep1(){
     const data=await res.json().catch(()=>[]);
     if(!data.length){suggestionsEl.innerHTML=`<div style="padding:10px 14px;font-size:12px;color:var(--text2);">No US locations found.</div>`;suggestionsEl.style.display='block';return;}
 
-    // Filter to contiguous 48 only
     const filtered=data.filter(p=>{
       if(p.address?.country_code&&p.address.country_code!=='us')return false;
       const lat=parseFloat(p.lat),lng=parseFloat(p.lon);
@@ -1405,7 +1523,6 @@ function buildStep3(){
   expRow.querySelector('#expPrint').onclick=()=>window.print();
   expRow.querySelector('#expBack').onclick=()=>{state.step=1;render();};
 
-  // Warn if we couldn't actually create the requested number of warehouses
   if(r.actualWH < r.requestedWH){
     const warn=document.createElement('div');warn.className='alert alert-warn';
     warn.innerHTML=`<div class="alert-icon">⚠</div><div><strong>Network reduced from ${r.requestedWH} to ${r.actualWH} warehouse${r.actualWH!==1?'s':''}.</strong> The algorithm detected that your suppliers naturally cluster into only ${r.actualWH} distinct groups — adding more facilities would create empty warehouses serving zero locations. Try adding more geographically spread suppliers to justify additional facilities.</div>`;
@@ -1413,7 +1530,7 @@ function buildStep3(){
   }
 
   const modeBadge=document.createElement('div');modeBadge.className='alert alert-info';
-  modeBadge.innerHTML=`<div class="alert-icon">${r.candidateMode==='all'?'🗺':'⭐'}</div><div>Results from <strong>${r.candidateMode==='all'?'All US cities':'Major metros'} pool</strong> — ${r.cityCount} candidate cities evaluated (contiguous 48 states). <a href="#" id="switchMode" style="color:var(--blue);font-weight:700;">Switch to ${r.candidateMode==='all'?'major metros':'all US cities'}</a> and re-run for comparison.</div>`;
+  modeBadge.innerHTML=`<div class="alert-icon">${r.candidateMode==='all'?'🗺':'⭐'}</div><div>Results from <strong>${r.candidateMode==='all'?'All US cities':'Major metros'} pool</strong> — ${r.cityCount} candidate cities evaluated (contiguous 48 states). <a href="#" id="switchMode">Switch to ${r.candidateMode==='all'?'major metros':'all US cities'}</a> and re-run for comparison.</div>`;
   c.appendChild(modeBadge);
   modeBadge.querySelector('#switchMode').onclick=e=>{e.preventDefault();state.candidateMode=r.candidateMode==='all'?'major':'all';state.step=1;render();};
 
@@ -1443,10 +1560,10 @@ function buildStep3(){
 
   const mapNote=document.createElement('p');
   mapNote.style.cssText='font-size:11.5px;color:var(--text2);margin:-6px 2px 16px;line-height:1.65;font-style:italic;font-weight:400;';
-  mapNote.innerHTML=`<span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#6b7280;opacity:.65;vertical-align:middle;margin-right:5px;"></span>The small grey dots are the ${r.cityCount} candidate cities the model evaluated — hover over one to see its cost indices. Your suppliers, warehouse(s), and the lines connecting them are the actual optimization result.`;
+  const dotColor = isDarkMode() ? '#94a3b8' : '#6b7280';
+  mapNote.innerHTML=`<span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:${dotColor};opacity:.7;vertical-align:middle;margin-right:5px;"></span>The small grey dots are the ${r.cityCount} candidate cities the model evaluated — hover over one to see its cost indices. Your suppliers, warehouse(s), and the lines connecting them are the actual optimization result.`;
   c.appendChild(mapNote);
 
-  // Determine what to show as "top recommendation" — for multi-WH, show WH1
   const topLabel=r.warehouses.length>1
     ? `PRIMARY WAREHOUSE (WH 1 of ${r.warehouses.length})`
     : '★ TOP RECOMMENDATION';
@@ -1486,10 +1603,6 @@ function buildStep3(){
   else cogText+=` Both the CoG method and multi-criteria model agree — strong convergence signal.`;
   cogBox.innerHTML=cogText;c.appendChild(cogBox);
 
-  // TABLE LABELING — this is the key fix for the confusion in your screenshot.
-  // For multi-warehouse runs, the "top 10" list wasn't a ranking of the chosen
-  // warehouses — it was the best single-WH options for ALL suppliers combined.
-  // Now we label it clearly and add context.
   const tH=document.createElement('p');tH.className='section-heading';
   if(r.warehouses.length>1){
     tH.innerHTML=`Alternative single-warehouse candidates <span style="font-size:11.5px;color:var(--text2);font-weight:400;margin-left:8px;">(if you consolidated to 1 WH)</span>`;
