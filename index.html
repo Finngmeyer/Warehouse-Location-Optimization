@@ -1211,6 +1211,27 @@ function multiWH(sups,cities,k,w){
 }
 
 function scoreLabel(s){if(s>=80)return{cls:'score-excellent',text:'Excellent'};if(s>=65)return{cls:'score-good',text:'Good'};if(s>=50)return{cls:'score-fair',text:'Fair'};return{cls:'score-poor',text:'Poor'};}
+
+// For multi-WH results, score each warehouse relative to the others in the
+// network (not against all candidate cities). This prevents every warehouse
+// getting 50/100 simply because it's the only candidate in its own pool.
+function scoreWarehouses(warehouses, weights){
+  if(!warehouses.length) return [];
+  const rawT = warehouses.map(wh=>{
+    if(!wh.suppliers.length) return 0;
+    const td = wh.suppliers.reduce((s,x)=>s+x.demand,0)||1;
+    return wh.suppliers.reduce((s,sup)=>s+sup.demand*roadDist(wh.city.lat,wh.city.lng,sup.lat,sup.lng),0)/td;
+  });
+  const rawLb  = warehouses.map(wh=>wh.city.labor);
+  const rawLn  = warehouses.map(wh=>wh.city.land);
+  const rawWf  = warehouses.map(wh=>1/(wh.city.pop+0.1));
+  const nT=normalize(rawT), nLb=normalize(rawLb), nLn=normalize(rawLn), nWf=normalize(rawWf);
+  const W=(weights.transport+weights.labor+weights.land+weights.workforce)||1;
+  return warehouses.map((wh,i)=>{
+    const comp=(weights.transport*nT[i]+weights.labor*nLb[i]+weights.land*nLn[i]+weights.workforce*nWf[i])/W;
+    return{transportKm:Math.round(rawT[i]),nT:nT[i],nLb:nLb[i],nLn:nLn[i],nWf:nWf[i],composite:comp,suitability:Math.round((1-comp)*100)};
+  });
+}
 function scoreBarColor(s){
   if(isDarkMode()){
     if(s>=80)return'#34d399';
@@ -1259,6 +1280,7 @@ let state={
   results:null,
   scenarios:[],
   reductionHintDismissed:false,
+  selectedWHIdx:0,
 };
 
 // ─── Render ───────────────────────────────────────────────────────────────────
@@ -1531,6 +1553,7 @@ function runOptimization(){
   const result={allScored,top10:allScored.slice(0,10),warehouses:whs,cogNearest,cogLat,cogLng,numWH:state.numWH,requestedWH:state.numWH,actualWH:whs.length,weights:{...state.weights},candidateMode:state.candidateMode,cityCount:cities.length,supplierCount:state.suppliers.length};
   state.results=result;
   state.reductionHintDismissed=false; // reset on each new run
+  state.selectedWHIdx=0;
   const exists=state.scenarios.findIndex(s=>JSON.stringify(s.weights)===JSON.stringify(result.weights)&&s.numWH===result.numWH&&s.candidateMode===result.candidateMode);
   if(exists>=0)state.scenarios[exists]=result;
   else{state.scenarios.push(result);if(state.scenarios.length>3)state.scenarios.shift();}
@@ -1586,8 +1609,21 @@ function buildStep3(){
     const mwH=document.createElement('p');mwH.className='section-heading';mwH.textContent='Optimized network layout';c.appendChild(mwH);
     const whFlex=document.createElement('div');whFlex.className='wh-network';
     r.warehouses.forEach((wh,i)=>{
-      const card=document.createElement('div');card.className='wh-net-card';card.style.borderTop=`3px solid ${WH_COLORS[i]}`;
-      card.innerHTML=`<div style="font-size:10.5px;color:var(--text2);margin-bottom:4px;text-transform:uppercase;letter-spacing:.05em;font-weight:700;">Warehouse ${i+1}</div><div style="font-size:16px;font-weight:700;margin-bottom:6px;color:var(--text);">${wh.city.name}, ${wh.city.state}</div><div style="font-size:12.5px;color:var(--text2);margin-bottom:5px;font-weight:500;">Serves ${wh.suppliers.length} location${wh.suppliers.length!==1?'s':''}</div><div style="font-size:11.5px;color:var(--text2);line-height:1.65;font-weight:400;">${wh.suppliers.map(s=>s.name).join(', ')}</div>`;
+      const card=document.createElement('div');card.className='wh-net-card';
+      const isSelected = i === state.selectedWHIdx;
+      card.style.borderTop=`3px solid ${WH_COLORS[i]}`;
+      card.style.cursor='pointer';
+      card.style.transition='box-shadow .15s, opacity .15s';
+      if(isSelected){
+        card.style.boxShadow=`0 0 0 2px ${WH_COLORS[i]},var(--shadow-md)`;
+        card.style.opacity='1';
+      } else {
+        card.style.opacity='0.62';
+      }
+      card.innerHTML=`<div style="font-size:10.5px;color:var(--text2);margin-bottom:4px;text-transform:uppercase;letter-spacing:.05em;font-weight:700;display:flex;align-items:center;gap:6px;">Warehouse ${i+1}${isSelected?`<span style="font-size:9.5px;padding:1px 7px;border-radius:20px;background:${WH_COLORS[i]}22;color:${WH_COLORS[i]};border:1px solid ${WH_COLORS[i]}55;font-weight:700;">Viewing</span>`:''}</div><div style="font-size:16px;font-weight:700;margin-bottom:6px;color:var(--text);">${wh.city.name}, ${wh.city.state}</div><div style="font-size:12.5px;color:var(--text2);margin-bottom:5px;font-weight:500;">Serves ${wh.suppliers.length} location${wh.suppliers.length!==1?'s':''}</div><div style="font-size:11.5px;color:var(--text2);line-height:1.65;font-weight:400;">${wh.suppliers.map(s=>s.name).join(', ')}</div>`;
+      card.onmouseenter=()=>{if(i!==state.selectedWHIdx)card.style.opacity='0.85';};
+      card.onmouseleave=()=>{if(i!==state.selectedWHIdx)card.style.opacity='0.62';};
+      card.onclick=()=>{state.selectedWHIdx=i;render();};
       whFlex.appendChild(card);
     });
     c.appendChild(whFlex);
@@ -1604,25 +1640,35 @@ function buildStep3(){
   mapNote.innerHTML=`<span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:${dotColor};opacity:.7;vertical-align:middle;margin-right:5px;"></span>The small grey dots are the ${r.cityCount} candidate cities the model evaluated — hover over one to see its cost indices. Your suppliers, warehouse(s), and the lines connecting them are the actual optimization result.`;
   c.appendChild(mapNote);
 
+  const selectedIdx = r.warehouses.length > 1 ? state.selectedWHIdx : 0;
   const topLabel=r.warehouses.length>1
-    ? `PRIMARY WAREHOUSE (WH 1 of ${r.warehouses.length})`
+    ? `WAREHOUSE ${selectedIdx+1} OF ${r.warehouses.length}`
     : '★ TOP RECOMMENDATION';
-  const topCity = r.warehouses.length>0 ? r.warehouses[0].city : top;
-  const topCityScore = scoreAll(state.suppliers,[topCity],r.weights)[0];
-  const topSuitability = r.warehouses.length>1 ? topCityScore.suitability : top.suitability;
-  const topLabelObj=scoreLabel(topSuitability);
-  const topTransport = r.warehouses.length>1 ? topCityScore.transportKm : top.transportKm;
-  const topMetrics = {
-    transport: r.warehouses.length>1 ? topCityScore.nT : top.nT,
-    labor: r.warehouses.length>1 ? topCityScore.nLb : top.nLb,
-    land: r.warehouses.length>1 ? topCityScore.nLn : top.nLn,
-    workforce: r.warehouses.length>1 ? topCityScore.nWf : top.nWf,
-  };
+  const topCity = r.warehouses.length>0 ? r.warehouses[selectedIdx].city : top;
 
+  let topSuitability, topTransport, topMetrics;
+  if(r.warehouses.length>1){
+    // Score all warehouses relative to each other so values spread meaningfully
+    const whScores = scoreWarehouses(r.warehouses, r.weights);
+    const sel = whScores[selectedIdx];
+    topSuitability = sel.suitability;
+    topTransport   = sel.transportKm;
+    topMetrics     = {transport:sel.nT, labor:sel.nLb, land:sel.nLn, workforce:sel.nWf};
+  } else {
+    topSuitability = top.suitability;
+    topTransport   = top.transportKm;
+    topMetrics     = {transport:top.nT, labor:top.nLb, land:top.nLn, workforce:top.nWf};
+  }
+  const topLabelObj=scoreLabel(topSuitability);
+
+  const recColor = r.warehouses.length>1 ? WH_COLORS[selectedIdx] : 'var(--blue)';
   const recCard=document.createElement('div');recCard.className='rec-card';
+  recCard.style.borderColor=recColor;
+  recCard.style.boxShadow=`0 0 0 4px ${recColor}18,var(--shadow-md)`;
   recCard.innerHTML=`<div class="rec-header">
     <div>
-      <span style="font-size:10.5px;background:var(--blue-bg);color:var(--blue-text);padding:3px 10px;border-radius:20px;font-weight:700;border:1px solid var(--blue-border);letter-spacing:.03em;">${topLabel}</span>
+      <span style="font-size:10.5px;background:${recColor}18;color:${recColor};padding:3px 10px;border-radius:20px;font-weight:700;border:1px solid ${recColor}55;letter-spacing:.03em;">${topLabel}</span>
+      ${r.warehouses.length>1?`<span style="font-size:11px;color:var(--text3);margin-left:8px;font-weight:400;">scores relative to this network</span>`:''}
       <h2 style="font-size:26px;font-weight:700;margin:10px 0 4px;letter-spacing:-.04em;color:var(--text);">${topCity.name}, ${topCity.state}</h2>
       <span class="score-badge ${topLabelObj.cls}" style="font-size:12px;padding:3px 10px;">Score: ${topSuitability}/100 — ${topLabelObj.text}</span>
     </div>
@@ -1637,11 +1683,13 @@ function buildStep3(){
   c.appendChild(recCard);
 
   const cog=r.cogNearest;
-  const cogBox=document.createElement('div');cogBox.className='cog-box';
-  let cogText=`<strong>Center of Gravity comparison:</strong> CoG (${r.cogLat.toFixed(2)}°, ${r.cogLng.toFixed(2)}°) → nearest candidate: <strong>${cog.name}, ${cog.state}</strong>.`;
-  if(cog.name!==topCity.name) cogText+=` This model recommends <strong style="color:var(--blue);">${topCity.name}</strong> instead — factoring in labor (${topCity.labor.toFixed(2)}× vs ${cog.labor.toFixed(2)}×) and land cost (${topCity.land.toFixed(2)}× vs ${cog.land.toFixed(2)}×) that pure CoG ignores.`;
-  else cogText+=` Both the CoG method and multi-criteria model agree — strong convergence signal.`;
-  cogBox.innerHTML=cogText;c.appendChild(cogBox);
+  if(r.warehouses.length<=1){
+    const cogBox=document.createElement('div');cogBox.className='cog-box';
+    let cogText=`<strong>Center of Gravity comparison:</strong> CoG (${r.cogLat.toFixed(2)}°, ${r.cogLng.toFixed(2)}°) → nearest candidate: <strong>${cog.name}, ${cog.state}</strong>.`;
+    if(cog.name!==topCity.name) cogText+=` This model recommends <strong style="color:var(--blue);">${topCity.name}</strong> instead — factoring in labor (${topCity.labor.toFixed(2)}× vs ${cog.labor.toFixed(2)}×) and land cost (${topCity.land.toFixed(2)}× vs ${cog.land.toFixed(2)}×) that pure CoG ignores.`;
+    else cogText+=` Both the CoG method and multi-criteria model agree — strong convergence signal.`;
+    cogBox.innerHTML=cogText;c.appendChild(cogBox);
+  }
 
   const tH=document.createElement('p');tH.className='section-heading';
   if(r.warehouses.length>1){
