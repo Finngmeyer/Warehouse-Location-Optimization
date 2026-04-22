@@ -43,7 +43,6 @@
   --font:'IBM Plex Sans',system-ui,sans-serif;
   --mono:'IBM Plex Mono',monospace;
 
-  /* Popup-specific colors that need to flip in dark mode */
   --popup-bg:#ffffff;
   --popup-text:#0a0f1a;
   --popup-text2:#334155;
@@ -51,10 +50,8 @@
   --candidate-dot:#6b7280;
   --candidate-dot-border:rgba(0,0,0,0.15);
 
-  /* Map tiles */
   --map-bg:#e8ecef;
 
-  /* Status badges - need separate dark variants */
   --score-excellent-bg:#d1fae5;
   --score-excellent-text:#064e3b;
   --score-good-bg:#dbeafe;
@@ -75,12 +72,10 @@
   --header-text:#ffffff;
   --header-sub:#cbd5e1;
 
-  /* Toast colors */
   --toast-bg:#0a0f1a;
   --toast-text:#ffffff;
   --toast-border:rgba(255,255,255,0.1);
 
-  /* Tooltip (always dark for legibility on map) */
   --tooltip-bg:rgba(10,15,26,0.97);
   --tooltip-text:#ffffff;
   --tooltip-text2:#e2e8f0;
@@ -117,7 +112,6 @@
     --shadow-md:0 4px 16px rgba(0,0,0,0.5),0 1px 3px rgba(0,0,0,0.4);
     --shadow-lg:0 20px 48px rgba(0,0,0,0.6),0 4px 8px rgba(0,0,0,0.5);
 
-    /* Popups in dark mode use dark surfaces */
     --popup-bg:#1a1d29;
     --popup-text:#f5f7fb;
     --popup-text2:#cbd5e1;
@@ -401,7 +395,6 @@ tr.top-row td .mono{color:var(--blue-text);font-weight:600;}
 .leaflet-popup-close-button{color:var(--popup-text2) !important;}
 .leaflet-popup-close-button:hover{color:var(--popup-text) !important;}
 
-/* Candidate tooltips - always dark for visibility on any tile style */
 .candidate-tooltip{
   background:var(--tooltip-bg) !important;
   color:var(--tooltip-text) !important;
@@ -420,7 +413,6 @@ tr.top-row td .mono{color:var(--blue-text);font-weight:600;}
 .candidate-tooltip .popup-row{color:var(--tooltip-text2) !important;font-size:11px;font-weight:500;}
 .candidate-tooltip .popup-row strong{color:var(--tooltip-text) !important;font-weight:700;}
 
-/* Regular popup content uses theme colors */
 .popup-title{font-size:14px;font-weight:700;color:var(--popup-text);margin-bottom:8px;letter-spacing:-.01em;}
 .popup-row{font-size:12px;color:var(--popup-text2);display:flex;justify-content:space-between;gap:12px;padding:3px 0;font-weight:500;}
 .popup-row strong{color:var(--popup-text);font-family:var(--mono);font-weight:600;}
@@ -429,7 +421,6 @@ tr.top-row td .mono{color:var(--blue-text);font-weight:600;}
 .popup-assigned{font-size:11px;color:var(--popup-text2);margin-top:8px;padding-top:8px;border-top:1px solid var(--popup-border);line-height:1.55;font-weight:500;}
 .popup-assigned em{color:var(--popup-text);font-style:normal;font-weight:600;}
 
-/* Custom marker styles */
 .supplier-marker{
   border-radius:50%;background:#f97316;border:2px solid #fff;
   box-shadow:0 2px 6px rgba(0,0,0,0.3),0 0 0 1px rgba(249,115,22,0.3);
@@ -468,7 +459,6 @@ tr.top-row td .mono{color:var(--blue-text);font-weight:600;}
 .weight-label{font-size:13px;font-weight:600;color:var(--text);}
 .weight-val{font-size:13px;font-weight:700;color:var(--blue);min-width:34px;text-align:right;font-family:var(--mono);}
 .weight-desc{font-size:11.5px;color:var(--text2);margin-bottom:7px;line-height:1.6;font-weight:400;}
-.tooltip-icon{display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:50%;border:1px solid var(--border2);color:var(--text2);font-size:9px;cursor:help;margin-left:4px;vertical-align:middle;}
 .preset-btns{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px;}
 .preset-btn{font-size:12.5px;padding:5px 13px;border-radius:20px;font-weight:500;}
 .preset-btn.selected{background:var(--blue-bg);color:var(--blue-text);border-color:var(--blue-border);font-weight:700;}
@@ -509,6 +499,41 @@ tr.top-row td .mono{color:var(--blue-text);font-weight:600;}
   .alert-warn{border-color:rgba(251,191,36,0.35);}
 }
 .alert a{color:var(--blue-text);text-decoration:underline;font-weight:700;}
+
+/* ── Subtle reduction hint ───────────────────────────────────────────── */
+/* Replaces the old loud warn alert — calm, dismissible, unobtrusive */
+.subtle-hint{
+  display:flex;align-items:center;gap:10px;
+  padding:9px 13px;margin-bottom:14px;
+  background:var(--bg2);
+  border:1px solid var(--border2);
+  border-left:3px solid var(--blue);
+  border-radius:var(--radius-lg);
+  font-size:12.5px;color:var(--text2);
+  line-height:1.6;font-weight:400;
+  box-shadow:var(--shadow);
+}
+.subtle-hint-text{flex:1;}
+.subtle-hint-text strong{color:var(--text);font-weight:600;}
+.subtle-hint-action{
+  font-size:12px;padding:4px 11px;
+  background:var(--blue-bg);
+  border:1px solid var(--blue-border);
+  color:var(--blue-text);
+  border-radius:var(--radius);
+  font-weight:600;white-space:nowrap;
+  flex-shrink:0;
+}
+.subtle-hint-action:hover{background:var(--blue-bg);filter:brightness(0.95);}
+@media(prefers-color-scheme:dark){
+  .subtle-hint-action:hover{filter:brightness(1.15);}
+}
+.subtle-hint-dismiss{
+  background:transparent;border:none;
+  color:var(--text3);font-size:16px;line-height:1;
+  padding:3px 5px;cursor:pointer;flex-shrink:0;
+}
+.subtle-hint-dismiss:hover{color:var(--text);background:transparent;}
 
 /* ── Score ───────────────────────────────────────────────────────────── */
 .score-badge{display:inline-flex;align-items:center;gap:4px;padding:3px 9px;border-radius:20px;font-size:11.5px;font-weight:700;}
@@ -605,6 +630,7 @@ tr.top-row td .mono{color:var(--blue-text);font-weight:600;}
   .factor-grid{grid-template-columns:1fr 1fr;}
   .mode-toggle{flex-direction:column;}
   .map-canvas{height:360px;}
+  .subtle-hint{flex-wrap:wrap;}
 }
 @media(max-width:420px){
   .metric-grid{flex-direction:column;}
@@ -792,7 +818,6 @@ function getCandidateCities(){
   return CITIES_MAJOR;
 }
 
-// Detect dark mode at runtime — used for marker colors and tile defaults
 function isDarkMode(){
   return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 }
@@ -825,7 +850,6 @@ const TILE_STYLES = {
 
 let currentMap = null;
 let currentTileLayer = null;
-// In dark mode, default to dark tiles. User can still override via toggle.
 let preferredTileStyle = isDarkMode() ? 'dark' : 'light';
 
 function destroyCurrentMap(){
@@ -841,7 +865,6 @@ function buildSupplierIcon(sup, maxDemand){
   const size = 12 + ratio * 18;
   const color = sup.isCustom ? '#3b82f6' : '#f97316';
   const shadowCol = sup.isCustom ? 'rgba(59,130,246,0.4)' : 'rgba(249,115,22,0.4)';
-  // Border color flips for visibility on dark tiles
   const borderColor = isDarkMode() && (preferredTileStyle === 'dark' || preferredTileStyle === 'light') ? '#1a1d29' : '#fff';
   return L.divIcon({
     className: '',
@@ -968,7 +991,6 @@ function renderMap(containerId, suppliers, warehouses, candidateCities, opts){
     candLayer.addTo(map);
   }
 
-  // Connection lines — slightly more opaque on dark tiles
   const lineOpacity = (preferredTileStyle === 'dark' || (preferredTileStyle === 'satellite')) ? 0.75 : 0.55;
   if(warehouses && warehouses.length){
     warehouses.forEach((wh, widx) => {
@@ -1088,17 +1110,12 @@ document.addEventListener('click', function(e){
   const newStyle = btn.dataset.tile;
   if(newStyle === preferredTileStyle) return;
   preferredTileStyle = newStyle;
-
-  // Full re-render so markers (which depend on dark/light context) update too
   render();
 });
 
-// Listen for OS dark mode changes — re-render the page so colors stay in sync
 if(window.matchMedia){
   const mql = window.matchMedia('(prefers-color-scheme: dark)');
   const onChange = () => {
-    // Auto-flip default tile style when the user hasn't manually overridden
-    // (We always re-render to refresh marker borders & dot colors.)
     if(preferredTileStyle === 'light' && isDarkMode()) preferredTileStyle = 'dark';
     else if(preferredTileStyle === 'dark' && !isDarkMode()) preferredTileStyle = 'light';
     render();
@@ -1133,28 +1150,36 @@ function multiWH(sups,cities,k,w){
 
   let centers=[scored[0]];
 
+  // Seeding: each iteration finds the best city for the highest-cost cluster,
+  // excluding cities already chosen as centers so we always add a distinct one.
   while(centers.length<k){
-    const tempClusters=centers.map(()=>[]);
+    const cls=centers.map(()=>[]);
     sups.forEach(sup=>{
       let mi=0,md=Infinity;
       centers.forEach((c,i)=>{
         const d=roadDist(c.lat,c.lng,sup.lat,sup.lng);
         if(d<md){md=d;mi=i;}
       });
-      tempClusters[mi].push(sup);
+      cls[mi].push(sup);
     });
-    let worstClusterIdx=0,worstCost=-1;
-    tempClusters.forEach((cluster,i)=>{
+    let worstIdx=0,worstCost=-1;
+    cls.forEach((cluster,i)=>{
       const cost=cluster.reduce((s,sup)=>s+sup.demand*roadDist(centers[i].lat,centers[i].lng,sup.lat,sup.lng),0);
-      if(cost>worstCost){worstCost=cost;worstClusterIdx=i;}
+      if(cost>worstCost){worstCost=cost;worstIdx=i;}
     });
-    const worstCluster=tempClusters[worstClusterIdx];
-    if(!worstCluster.length){break;}
-    const bestForCluster=scoreAll(worstCluster,cities,w)[0];
-    if(centers.some(c=>c.name===bestForCluster.name&&c.state===bestForCluster.state)){break;}
-    centers.push(bestForCluster);
+    const worstCluster=cls[worstIdx];
+    if(!worstCluster.length) break;
+    // Only consider cities not already chosen — this is the critical fix.
+    const available=cities.filter(c=>!centers.some(ce=>ce.name===c.name&&ce.state===c.state));
+    if(!available.length) break;
+    const best=scoreAll(worstCluster,available,w)[0];
+    if(!best) break;
+    centers.push(best);
   }
 
+  // Refinement: re-assign suppliers and update each center's optimal city.
+  // If a cluster empties during iteration, keep the previous center rather than
+  // dropping it (which was the cause of warehouses disappearing).
   for(let iter=0;iter<30;iter++){
     const cls=centers.map(()=>[]);
     sups.forEach(sup=>{
@@ -1165,12 +1190,13 @@ function multiWH(sups,cities,k,w){
       });
       cls[mi].push(sup);
     });
-    const nc=cls.map((cs,i)=>cs.length?scoreAll(cs,cities,w)[0]:null);
-    const changed=nc.some((c,i)=>c===null||!centers[i]||c.name!==centers[i].name);
-    centers=nc.filter(c=>c!==null);
-    if(!centers.length||!changed)break;
+    const nc=cls.map((cs,i)=>cs.length?scoreAll(cs,cities,w)[0]:centers[i]);
+    const changed=nc.some((c,i)=>c.name!==centers[i].name||c.state!==centers[i].state);
+    centers=nc;
+    if(!changed) break;
   }
 
+  // Final assignment
   const cls=centers.map(()=>[]);
   sups.forEach(sup=>{
     let mi=0,md=Infinity;
@@ -1186,7 +1212,6 @@ function multiWH(sups,cities,k,w){
 
 function scoreLabel(s){if(s>=80)return{cls:'score-excellent',text:'Excellent'};if(s>=65)return{cls:'score-good',text:'Good'};if(s>=50)return{cls:'score-fair',text:'Fair'};return{cls:'score-poor',text:'Poor'};}
 function scoreBarColor(s){
-  // Slightly brighter colors in dark mode for better visibility on dark tracks
   if(isDarkMode()){
     if(s>=80)return'#34d399';
     if(s>=65)return'#60a5fa';
@@ -1233,6 +1258,7 @@ let state={
   candidateMode:'major',
   results:null,
   scenarios:[],
+  reductionHintDismissed:false,
 };
 
 // ─── Render ───────────────────────────────────────────────────────────────────
@@ -1504,6 +1530,7 @@ function runOptimization(){
   const cogNearest=[...cities].sort((a,b)=>haversine(a.lat,a.lng,cogLat,cogLng)-haversine(b.lat,b.lng,cogLat,cogLng))[0];
   const result={allScored,top10:allScored.slice(0,10),warehouses:whs,cogNearest,cogLat,cogLng,numWH:state.numWH,requestedWH:state.numWH,actualWH:whs.length,weights:{...state.weights},candidateMode:state.candidateMode,cityCount:cities.length,supplierCount:state.suppliers.length};
   state.results=result;
+  state.reductionHintDismissed=false; // reset on each new run
   const exists=state.scenarios.findIndex(s=>JSON.stringify(s.weights)===JSON.stringify(result.weights)&&s.numWH===result.numWH&&s.candidateMode===result.candidateMode);
   if(exists>=0)state.scenarios[exists]=result;
   else{state.scenarios.push(result);if(state.scenarios.length>3)state.scenarios.shift();}
@@ -1523,10 +1550,23 @@ function buildStep3(){
   expRow.querySelector('#expPrint').onclick=()=>window.print();
   expRow.querySelector('#expBack').onclick=()=>{state.step=1;render();};
 
-  if(r.actualWH < r.requestedWH){
-    const warn=document.createElement('div');warn.className='alert alert-warn';
-    warn.innerHTML=`<div class="alert-icon">⚠</div><div><strong>Network reduced from ${r.requestedWH} to ${r.actualWH} warehouse${r.actualWH!==1?'s':''}.</strong> The algorithm detected that your suppliers naturally cluster into only ${r.actualWH} distinct groups — adding more facilities would create empty warehouses serving zero locations. Try adding more geographically spread suppliers to justify additional facilities.</div>`;
-    c.appendChild(warn);
+  // ── Subtle suggestion (replaces the old loud alert-warn) ──────────────────
+  // Only shown if the algorithm placed fewer warehouses than requested AND the
+  // user hasn't dismissed it yet. Framed as an opt-in suggestion, not a warning.
+  if(r.actualWH < r.requestedWH && !state.reductionHintDismissed){
+    const hint=document.createElement('div');
+    hint.className='subtle-hint no-print';
+    hint.innerHTML=`
+      <div class="subtle-hint-text">
+        Your suppliers form <strong>${r.actualWH} natural cluster${r.actualWH!==1?'s':''}</strong>.
+        Running with ${r.actualWH} warehouse${r.actualWH!==1?'s':''} instead of ${r.requestedWH} may give tighter coverage.
+      </div>
+      <button class="subtle-hint-action" id="applyReduction">Try ${r.actualWH} WH</button>
+      <button class="subtle-hint-dismiss" id="dismissHint" aria-label="Dismiss">×</button>
+    `;
+    c.appendChild(hint);
+    hint.querySelector('#applyReduction').onclick=()=>{state.numWH=r.actualWH;state.step=1;render();};
+    hint.querySelector('#dismissHint').onclick=()=>{state.reductionHintDismissed=true;render();};
   }
 
   const modeBadge=document.createElement('div');modeBadge.className='alert alert-info';
