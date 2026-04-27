@@ -34,25 +34,104 @@
 @media(prefers-color-scheme:dark){
   :root{
     --bg:#0e1018;--bg2:#161923;--bg3:#1e2333;--bg4:#262d3d;
-    --text:#f1f4fb;--text2:#cbd5e1;--text3:#8899b0;
-    --border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.14);
-    --blue:#60a5fa;--blue-dark:#3b82f6;--blue-bg:rgba(96,165,250,0.13);--blue-text:#bfdbfe;--blue-border:rgba(96,165,250,0.35);
-    --green:#34d399;--green-bg:rgba(52,211,153,0.13);--green-text:#a7f3d0;--green-border:rgba(52,211,153,0.3);
-    --amber:#fbbf24;--amber-bg:rgba(251,191,36,0.12);--amber-text:#fde68a;
-    --red:#f87171;--red-bg:rgba(248,113,113,0.13);--red-text:#fecaca;
+    --text:#f0f4fb;--text2:#c8d6e8;--text3:#7f92aa;
+    --border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.16);
+    --blue:#60a5fa;--blue-dark:#3b82f6;--blue-bg:rgba(96,165,250,0.14);--blue-text:#bfdbfe;--blue-border:rgba(96,165,250,0.38);
+    --green:#34d399;--green-bg:rgba(52,211,153,0.14);--green-text:#a7f3d0;--green-border:rgba(52,211,153,0.32);
+    --amber:#fbbf24;--amber-bg:rgba(251,191,36,0.14);--amber-text:#fde68a;
+    --red:#f87171;--red-bg:rgba(248,113,113,0.14);--red-text:#fecaca;
     --shadow:0 1px 3px rgba(0,0,0,0.5),0 0 0 1px rgba(0,0,0,0.35);
     --shadow-md:0 4px 16px rgba(0,0,0,0.45),0 1px 3px rgba(0,0,0,0.3);
     --shadow-lg:0 20px 48px rgba(0,0,0,0.6),0 4px 8px rgba(0,0,0,0.4);
-    --popup-bg:#1e2333;--popup-text:#f1f4fb;--popup-text2:#cbd5e1;--popup-border:rgba(255,255,255,0.1);
+    --popup-bg:#1e2333;--popup-text:#f0f4fb;--popup-text2:#c8d6e8;--popup-border:rgba(255,255,255,0.1);
     --map-bg:#0a0d14;
-    --score-excellent-bg:rgba(52,211,153,0.16);--score-excellent-text:#a7f3d0;
-    --score-good-bg:rgba(96,165,250,0.16);--score-good-text:#bfdbfe;
-    --score-fair-bg:rgba(251,191,36,0.16);--score-fair-text:#fde68a;
-    --score-poor-bg:rgba(248,113,113,0.16);--score-poor-text:#fecaca;
-    --header-bg:#060c18;--header-text:#f1f4fb;--header-sub:#64748b;
-    --toast-bg:#1e2333;--toast-text:#f1f4fb;
+    --score-excellent-bg:rgba(52,211,153,0.18);--score-excellent-text:#6ee7b7;
+    --score-good-bg:rgba(96,165,250,0.18);--score-good-text:#93c5fd;
+    --score-fair-bg:rgba(251,191,36,0.18);--score-fair-text:#fcd34d;
+    --score-poor-bg:rgba(248,113,113,0.18);--score-poor-text:#fca5a5;
+    --header-bg:#060c18;--header-text:#f0f4fb;--header-sub:#8899b0;
+    --toast-bg:#1e2333;--toast-text:#f0f4fb;
     --panel-bg:#1e2333;
   }
+
+  /* Ensure white text stays readable in dark on coloured btn-primary */
+  .btn-primary{color:#fff !important;}
+
+  /* Normalize-alert button: dark amber bg needs dark text */
+  .normalize-alert button{background:var(--amber);color:#0a0f1a;}
+
+  /* Weight total bad border visible in dark */
+  .weight-total-bad{border-color:rgba(251,191,36,0.4);}
+
+  /* Map style toggle active button */
+  .map-style-btn.active{background:var(--bg4);box-shadow:none;}
+
+  /* Inputs need a slightly more visible background in dark */
+  input,select{background:var(--bg3);border-color:var(--border2);}
+
+  /* rec-metrics row background */
+  .rec-metric{background:var(--bg4);}
+
+  /* factor item */
+  .factor-item{background:var(--bg3);border-color:var(--border2);}
+
+  /* Transit cells */
+  .transit-cell{background:var(--bg3);border-color:var(--border2);}
+
+  /* Calc table header */
+  .calc-table th{background:var(--bg4);color:var(--text2);}
+  .calc-table td{color:var(--text2);}
+  .calc-table td.label{color:var(--text);}
+  .calc-table tr.selected-row td{background:rgba(96,165,250,0.16);color:var(--blue-text);}
+
+  /* Calc formula box */
+  .calc-formula{background:var(--bg4);color:var(--text2);border-color:var(--border2);}
+  .calc-formula span.hi{color:#93c5fd;}
+  .calc-formula span.hi2{color:#6ee7b7;}
+
+  /* Final score box */
+  .final-score-box{background:var(--bg4);border-color:var(--border2);}
+  .final-score-detail{color:var(--text2);}
+
+  /* Break-even result area */
+  .be-verdict{background:var(--bg4);border-color:var(--border2);color:var(--text2);}
+  .be-cost-card{background:var(--bg3);border-color:var(--border2);}
+  .be-cost-lbl{color:var(--text3);}
+  .be-bar-track{background:var(--bg4);}
+
+  /* Accordion */
+  .accordion-header{background:var(--bg2);border-color:var(--border2);}
+  .accordion-header:hover{background:var(--bg3);}
+  .accordion-header.open{background:rgba(96,165,250,0.12);border-color:var(--blue-border);}
+  .accordion-body{background:var(--bg2);border-color:var(--border2);}
+
+  /* Score badges — boost contrast */
+  .score-excellent{font-weight:700;}
+  .score-good{font-weight:700;}
+  .score-fair{font-weight:700;}
+  .score-poor{font-weight:700;}
+
+  /* CoG box */
+  .cog-box{background:var(--bg3);border-color:var(--border2);}
+
+  /* Welcome banner */
+  .welcome-banner{background:var(--bg2);border-color:var(--border2);}
+
+  /* Scenario chips */
+  .scenario-chip{background:var(--bg3);border-color:var(--border2);}
+
+  /* Pool toggle buttons */
+  .pool-btn{background:var(--bg3);border-color:var(--border2);}
+
+  /* Priority buttons */
+  .priority-btn{background:var(--bg3);border-color:var(--border2);}
+
+  /* WH net cards */
+  .wh-net-card{background:var(--bg2);border-color:var(--border2);}
+
+  /* Export / ghost buttons */
+  .btn-ghost{color:var(--text2);}
+  .btn-ghost:hover{background:var(--bg3);}
 }
 body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;font-size:14px;line-height:1.5;}
 
@@ -114,6 +193,7 @@ button:disabled{opacity:.4;cursor:not-allowed;transform:none;}
 .btn-ghost{border-color:transparent;background:transparent;color:var(--text2);}
 .btn-ghost:hover{background:var(--bg3);}
 .btn-success{background:var(--green-bg);color:var(--green-text);border-color:var(--green-border);font-weight:600;}
+.btn-success:hover{filter:brightness(1.08);}
 .btn-outline{border-color:var(--border2);background:transparent;color:var(--text2);}
 .btn-outline:hover{background:var(--bg3);}
 .btn-outline.active{background:var(--blue-bg);border-color:var(--blue-border);color:var(--blue-text);font-weight:600;}
@@ -192,7 +272,7 @@ tr.highlight-row td{color:var(--green-text) !important;font-weight:500;}
 @keyframes pulse{0%{transform:translate(-50%,-50%) scale(0.6);opacity:.5;}100%{transform:translate(-50%,-50%) scale(2.2);opacity:0;}}
 .wh-marker-core{position:relative;width:16px;height:16px;border-radius:50%;border:2.5px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,0.3);}
 .wh-marker-label{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);font-size:11px;font-weight:700;white-space:nowrap;padding:3px 8px;border-radius:4px;background:rgba(255,255,255,0.97);box-shadow:0 1px 3px rgba(0,0,0,0.2);pointer-events:none;}
-@media(prefers-color-scheme:dark){.wh-marker-label{background:rgba(22,25,35,0.97);}}
+@media(prefers-color-scheme:dark){.wh-marker-label{background:rgba(22,25,35,0.97);color:inherit;}}
 
 /* ── Priority picker ── */
 .priority-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px;}
@@ -259,16 +339,22 @@ tr.highlight-row td{color:var(--green-text) !important;font-weight:500;}
 .factor-bar-fill{height:4px;border-radius:2px;}
 .factor-context{font-size:10.5px;color:var(--text3);margin-top:5px;line-height:1.4;}
 
-/* ── Panel tabs (below rec card) ── */
-.panel-tabs{display:flex;gap:8px;margin-bottom:0;}
-.panel-tab{padding:8px 16px;font-size:12.5px;font-weight:600;border-radius:var(--radius-lg) var(--radius-lg) 0 0;border:1px solid var(--border);border-bottom:none;background:var(--bg3);color:var(--text3);cursor:pointer;transition:all .15s;display:flex;align-items:center;gap:6px;}
-.panel-tab:hover{background:var(--bg4);color:var(--text2);}
-.panel-tab.active{background:var(--bg2);color:var(--text);border-color:var(--border2);border-bottom-color:var(--bg2);}
-.panel-tab-icon{font-size:14px;}
-
-/* ── Panel body ── */
-.panel-body{background:var(--bg2);border:1px solid var(--border2);border-radius:0 var(--radius-lg) var(--radius-lg) var(--radius-lg);padding:24px;margin-bottom:18px;box-shadow:var(--shadow);}
-.panel-body.hidden{display:none;}
+/* ── Accordion panels ── */
+.accordion-wrap{display:flex;flex-direction:column;gap:8px;margin-bottom:18px;}
+.accordion-header{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 18px;background:var(--bg2);border:1px solid var(--border2);border-radius:var(--radius-lg);cursor:pointer;transition:background .15s,border-color .15s;user-select:none;}
+.accordion-header:hover{background:var(--bg3);}
+.accordion-header.open{border-color:var(--blue);border-radius:var(--radius-lg) var(--radius-lg) 0 0;background:var(--blue-bg);}
+.accordion-header-left{display:flex;align-items:center;gap:10px;}
+.accordion-icon{font-size:16px;}
+.accordion-label{font-size:13px;font-weight:600;color:var(--text);}
+.accordion-header.open .accordion-label{color:var(--blue-text);}
+.accordion-sublabel{font-size:11.5px;color:var(--text3);margin-top:1px;}
+.accordion-header.open .accordion-sublabel{color:var(--blue-text);opacity:.75;}
+.accordion-chevron{font-size:13px;color:var(--text3);transition:transform .2s ease;flex-shrink:0;line-height:1;}
+.accordion-header.open .accordion-chevron{transform:rotate(180deg);color:var(--blue-text);}
+.accordion-body{background:var(--bg2);border:1px solid var(--border2);border-top:none;border-radius:0 0 var(--radius-lg) var(--radius-lg);padding:24px;box-shadow:var(--shadow);overflow:hidden;animation:accordionOpen .18s ease;}
+.accordion-body.hidden{display:none;}
+@keyframes accordionOpen{from{opacity:0;transform:translateY(-6px);}to{opacity:1;transform:translateY(0);}}
 
 /* ── Calc panel styles ── */
 .calc-step{margin-bottom:22px;padding-bottom:22px;border-bottom:1px solid var(--border);}
@@ -381,7 +467,6 @@ tr.highlight-row td{color:var(--green-text) !important;font-weight:500;}
   .transit-row{flex-wrap:wrap;}.transit-cell{min-width:80px;}
   .pool-toggle{flex-direction:column;}.factor-grid{grid-template-columns:1fr 1fr;}
   .be-inputs{grid-template-columns:1fr;}
-  .panel-tabs{flex-wrap:wrap;}
 }
 @media(max-width:420px){.metric-grid{flex-direction:column;}}
 </style>
@@ -907,7 +992,7 @@ function runOptimization(){
   const cogLng=state.suppliers.reduce((s,x)=>s+x.lng*x.demand,0)/td;
   const cogNearest=[...cities].sort((a,b)=>haversine(a.lat,a.lng,cogLat,cogLng)-haversine(b.lat,b.lng,cogLat,cogLng))[0];
   const result={allScored,top10:allScored.slice(0,10),warehouses:whs,cogNearest,cogLat,cogLng,numWH:state.numWH,requestedWH:state.numWH,actualWH:whs.length,weights:{...w},priorityId:state.priorityId,candidateMode:state.candidateMode,cityCount:cities.length};
-  state.results=result;state.reductionHintDismissed=false;state.selectedWHIdx=0;state.activePanel='calc';
+  state.results=result;state.reductionHintDismissed=false;state.selectedWHIdx=0;state.activePanel=null;
   const exists=state.scenarios.findIndex(s=>JSON.stringify(s.weights)===JSON.stringify(result.weights)&&s.numWH===result.numWH&&s.candidateMode===result.candidateMode);
   if(exists>=0)state.scenarios[exists]=result;else{state.scenarios.push(result);if(state.scenarios.length>3)state.scenarios.shift();}
   state.step=2;render();
@@ -1023,24 +1108,47 @@ function buildStep3(){
     cogBox.innerHTML=ct;c.appendChild(cogBox);
   }
 
-  // ── Panel tabs ──────────────────────────────────────────────────────────────
-  const tabsWrap=document.createElement('div');tabsWrap.className='panel-tabs no-print';
-  const tabs=[
-    {id:'calc',icon:'🔢',label:'How we calculated this'},
-    {id:'breakeven',icon:'💰',label:'Break-even calculator'},
-  ];
-  tabs.forEach(tab=>{
-    const btn=document.createElement('button');btn.className='panel-tab'+(state.activePanel===tab.id?' active':'');
-    btn.innerHTML=`<span class="panel-tab-icon">${tab.icon}</span>${tab.label}`;
-    btn.onclick=()=>{state.activePanel=state.activePanel===tab.id?null:tab.id;renderPanels(panelBody,scored,r,selWH,totalDemand);tabsWrap.querySelectorAll('.panel-tab').forEach(t=>t.classList.remove('active'));if(state.activePanel)btn.classList.add('active');};
-    tabsWrap.appendChild(btn);
-  });
-  c.appendChild(tabsWrap);
+  // ── Accordion panels ────────────────────────────────────────────────────────
+  const accordionWrap=document.createElement('div');accordionWrap.className='accordion-wrap no-print';
 
-  const panelBody=document.createElement('div');panelBody.className='panel-body no-print';
-  if(!state.activePanel)panelBody.classList.add('hidden');
-  c.appendChild(panelBody);
-  renderPanels(panelBody,scored,r,selWH,totalDemand);
+  const accordions=[
+    {id:'calc',    icon:'🔢', label:'How we calculated this',     sub:'Step-by-step breakdown of the scoring math'},
+    {id:'breakeven',icon:'💰',label:'Break-even calculator',       sub:'Is adding a warehouse worth the fixed cost?'},
+  ];
+
+  const panelBodies={};
+
+  accordions.forEach(acc=>{
+    // Header (always visible, acts as toggle)
+    const header=document.createElement('div');header.className='accordion-header'+(state.activePanel===acc.id?' open':'');
+    header.innerHTML=`<div class="accordion-header-left"><span class="accordion-icon">${acc.icon}</span><div><div class="accordion-label">${acc.label}</div><div class="accordion-sublabel">${acc.sub}</div></div></div><span class="accordion-chevron">▼</span>`;
+
+    // Body (hidden by default)
+    const body=document.createElement('div');body.className='accordion-body'+(state.activePanel===acc.id?'':' hidden');
+    panelBodies[acc.id]=body;
+
+    header.onclick=()=>{
+      const isOpen=state.activePanel===acc.id;
+      state.activePanel=isOpen?null:acc.id;
+      // Update all headers and bodies
+      accordionWrap.querySelectorAll('.accordion-header').forEach(h=>h.classList.remove('open'));
+      Object.values(panelBodies).forEach(b=>b.classList.add('hidden'));
+      if(!isOpen){
+        header.classList.add('open');
+        body.classList.remove('hidden');
+        renderPanel(body,acc.id,scored,r,selWH,totalDemand);
+      }
+    };
+
+    // Render immediately if this panel is active
+    if(state.activePanel===acc.id) renderPanel(body,acc.id,scored,r,selWH,totalDemand);
+
+    const wrapper=document.createElement('div');
+    wrapper.appendChild(header);wrapper.appendChild(body);
+    accordionWrap.appendChild(wrapper);
+  });
+
+  c.appendChild(accordionWrap);
 
   // ── Top-10 table ────────────────────────────────────────────────────────────
   const tH=document.createElement('p');tH.className='section-heading';
@@ -1067,12 +1175,10 @@ function buildStep3(){
 }
 
 // ─── Panel renderer ───────────────────────────────────────────────────────────
-function renderPanels(container, scored, r, selWH, totalDemand){
+function renderPanel(container, id, scored, r, selWH, totalDemand){
   container.innerHTML='';
-  if(!state.activePanel){container.classList.add('hidden');return;}
-  container.classList.remove('hidden');
-  if(state.activePanel==='calc') buildCalcPanel(container, scored, r, selWH);
-  else if(state.activePanel==='breakeven') buildBreakevenPanel(container, r, totalDemand);
+  if(id==='calc') buildCalcPanel(container, scored, r, selWH);
+  else if(id==='breakeven') buildBreakevenPanel(container, r, totalDemand);
 }
 
 function buildCalcPanel(container, scored, r, selWH){
