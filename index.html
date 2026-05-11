@@ -53,89 +53,45 @@
     --toast-bg:#1e2333;--toast-text:#f0f4fb;
     --panel-bg:#1e2333;
   }
-
-  /* Ensure white text stays readable in dark on coloured btn-primary */
   .btn-primary{color:#fff !important;}
-
-  /* Normalize-alert button: dark amber bg needs dark text */
   .normalize-alert button{background:var(--amber);color:#0a0f1a;}
-
-  /* Weight total bad border visible in dark */
   .weight-total-bad{border-color:rgba(251,191,36,0.4);}
-
-  /* Map style toggle active button */
   .map-style-btn.active{background:var(--bg4);box-shadow:none;}
-
-  /* Inputs need a slightly more visible background in dark */
   input,select{background:var(--bg3);border-color:var(--border2);}
-
-  /* rec-metrics row background */
   .rec-metric{background:var(--bg4);}
-
-  /* factor item */
   .factor-item{background:var(--bg3);border-color:var(--border2);}
-
-  /* Transit cells */
   .transit-cell{background:var(--bg3);border-color:var(--border2);}
-
-  /* Calc table header */
   .calc-table th{background:var(--bg4);color:var(--text2);}
   .calc-table td{color:var(--text2);}
   .calc-table td.label{color:var(--text);}
   .calc-table tr.selected-row td{background:rgba(96,165,250,0.16);color:var(--blue-text);}
-
-  /* Calc formula box */
   .calc-formula{background:var(--bg4);color:var(--text2);border-color:var(--border2);}
   .calc-formula span.hi{color:#93c5fd;}
   .calc-formula span.hi2{color:#6ee7b7;}
-
-  /* Final score box */
   .final-score-box{background:var(--bg4);border-color:var(--border2);}
   .final-score-detail{color:var(--text2);}
-
-  /* Break-even result area */
   .be-verdict{background:var(--bg4);border-color:var(--border2);color:var(--text2);}
   .be-cost-card{background:var(--bg3);border-color:var(--border2);}
   .be-cost-lbl{color:var(--text3);}
   .be-bar-track{background:var(--bg4);}
-
-  /* Accordion */
   .accordion-header{background:var(--bg2);border-color:var(--border2);}
   .accordion-header:hover{background:var(--bg3);}
   .accordion-header.open{background:rgba(96,165,250,0.12);border-color:var(--blue-border);}
   .accordion-body{background:var(--bg2);border-color:var(--border2);}
-
-  /* Score badges — boost contrast */
   .score-excellent{font-weight:700;}
   .score-good{font-weight:700;}
   .score-fair{font-weight:700;}
   .score-poor{font-weight:700;}
-
-  /* CoG box */
   .cog-box{background:var(--bg3);border-color:var(--border2);}
-
-  /* Welcome banner */
   .welcome-banner{background:var(--bg2);border-color:var(--border2);}
-
-  /* Scenario chips */
   .scenario-chip{background:var(--bg3);border-color:var(--border2);}
-
-  /* Pool toggle buttons */
   .pool-btn{background:var(--bg3);border-color:var(--border2);}
-
-  /* Priority buttons */
   .priority-btn{background:var(--bg3);border-color:var(--border2);}
-
-  /* WH net cards */
   .wh-net-card{background:var(--bg2);border-color:var(--border2);}
-
-  /* Export / ghost buttons */
   .btn-ghost{color:var(--text2);}
   .btn-ghost:hover{background:var(--bg3);}
 }
 body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;font-size:14px;line-height:1.5;}
-
-/* ── Header ── */
 .header{background:var(--header-bg);padding:0 28px;display:flex;align-items:center;justify-content:space-between;gap:12px;position:sticky;top:0;z-index:200;height:56px;border-bottom:1px solid rgba(255,255,255,0.06);}
 .header-left{display:flex;align-items:center;gap:12px;}
 .logo{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#1d4ed8);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
@@ -143,8 +99,6 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 .header-title{font-size:14px;font-weight:600;color:var(--header-text);}
 .header-sub{font-size:11.5px;color:var(--header-sub);margin-top:1px;}
 .header-badge{font-size:10.5px;padding:3px 10px;border-radius:20px;background:rgba(37,99,235,0.22);color:#93c5fd;font-weight:600;border:1px solid rgba(37,99,235,0.35);}
-
-/* ── Progress ── */
 .progress-wrap{background:var(--bg2);border-bottom:1px solid var(--border);position:relative;z-index:100;}
 .progress-inner{max-width:880px;margin:0 auto;display:flex;padding:0 24px;}
 .prog-step{flex:1;display:flex;align-items:center;gap:9px;padding:12px 6px;position:relative;cursor:pointer;border:none;background:none;font-family:var(--font);transition:opacity .15s;}
@@ -159,11 +113,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 .prog-step.done .prog-label{color:var(--text2);}
 .prog-track{height:2px;background:var(--bg4);}
 .prog-fill{height:2px;background:linear-gradient(to right,var(--blue),#60a5fa);transition:width .4s ease;}
-
-/* ── Layout ── */
 .container{max-width:880px;margin:0 auto;padding:28px 24px;}
-
-/* ── Welcome banner ── */
 .welcome-banner{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-xl);padding:26px 30px;margin-bottom:22px;display:flex;gap:18px;align-items:flex-start;box-shadow:var(--shadow);}
 .welcome-icon{font-size:28px;flex-shrink:0;margin-top:2px;}
 .welcome-title{font-size:15.5px;font-weight:700;color:var(--text);margin-bottom:4px;}
@@ -172,19 +122,14 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 .welcome-step-chip{font-size:11.5px;padding:3px 11px;border-radius:20px;background:var(--bg3);border:1px solid var(--border);color:var(--text2);font-weight:500;}
 .welcome-step-chip.done{background:var(--green-bg);border-color:var(--green-border);color:var(--green-text);}
 .welcome-step-chip.current{background:var(--blue-bg);border-color:var(--blue-border);color:var(--blue-text);font-weight:600;}
-
-/* ── Cards ── */
 .card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-xl);padding:20px 22px;margin-bottom:14px;box-shadow:var(--shadow);}
 .card-title{font-size:11.5px;font-weight:700;color:var(--text2);margin-bottom:14px;letter-spacing:.05em;text-transform:uppercase;}
 .card-title small{font-size:10.5px;font-weight:400;color:var(--text3);text-transform:none;letter-spacing:0;margin-left:6px;}
-
-/* ── Buttons ── */
 button{font-family:var(--font);font-size:13px;font-weight:500;cursor:pointer;transition:all .15s;border-radius:var(--radius);border:1px solid var(--border2);background:var(--bg2);color:var(--text);padding:7px 14px;white-space:nowrap;}
 button:hover{background:var(--bg3);}
 button:active{transform:scale(.98);}
 button:disabled{opacity:.4;cursor:not-allowed;transform:none;}
 .btn-primary{background:var(--blue);color:#fff;border-color:var(--blue);font-weight:600;box-shadow:0 1px 4px rgba(37,99,235,0.25);}
-@media(prefers-color-scheme:dark){.btn-primary{color:#0a0f1a;}}
 .btn-primary:hover{background:var(--blue-dark);border-color:var(--blue-dark);transform:translateY(-1px);box-shadow:0 3px 12px rgba(37,99,235,0.35);}
 .btn-primary:active{transform:translateY(0);}
 .btn-sm{padding:5px 10px;font-size:12px;}
@@ -197,16 +142,12 @@ button:disabled{opacity:.4;cursor:not-allowed;transform:none;}
 .btn-outline{border-color:var(--border2);background:transparent;color:var(--text2);}
 .btn-outline:hover{background:var(--bg3);}
 .btn-outline.active{background:var(--blue-bg);border-color:var(--blue-border);color:var(--blue-text);font-weight:600;}
-
-/* ── Inputs ── */
 input,select{font-family:var(--font);font-size:13px;color:var(--text);background:var(--bg2);border:1px solid var(--border2);border-radius:var(--radius);padding:8px 11px;width:100%;outline:none;transition:border-color .15s,box-shadow .15s;}
 input:focus,select:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,0.12);}
 input[type=range]{padding:0;border:none;background:none;box-shadow:none;accent-color:var(--blue);cursor:pointer;height:22px;width:100%;}
 input[type=range]:focus{box-shadow:none;}
 .field-error{font-size:11.5px;color:var(--red);margin-top:4px;font-weight:500;}
 label.field-label{display:block;font-size:12px;font-weight:600;color:var(--text2);margin-bottom:5px;}
-
-/* ── Tables ── */
 .tbl-wrap{border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;margin-bottom:14px;background:var(--bg2);}
 table{width:100%;border-collapse:collapse;font-size:12.5px;}
 thead tr{background:var(--bg3);border-bottom:1px solid var(--border2);}
@@ -217,24 +158,16 @@ tr.top-row td{background:var(--blue-bg);}
 tr.top-row td.name-cell{color:var(--blue-text);font-weight:700;}
 tr.top-row td{color:var(--blue-text);font-weight:500;}
 tr:hover td{background:var(--bg3);}
-tr.highlight-row td{background:var(--green-bg);}
-tr.highlight-row td{color:var(--green-text) !important;font-weight:500;}
 .mono{font-family:var(--mono);font-size:11.5px;font-weight:500;}
-
-/* ── Empty state ── */
 .empty-state{text-align:center;padding:48px 20px;color:var(--text2);}
 .empty-icon{font-size:36px;margin-bottom:12px;opacity:.5;}
 .empty-title{font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px;}
 .empty-desc{font-size:13px;line-height:1.7;color:var(--text2);max-width:380px;margin:0 auto;}
-
-/* ── Metric cards ── */
 .metric-grid{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px;}
 .metric-card{flex:1;min-width:110px;background:var(--bg2);border-radius:var(--radius-lg);padding:14px 16px;border:1px solid var(--border);border-left:3px solid var(--blue);box-shadow:var(--shadow);}
 .metric-label{font-size:10.5px;color:var(--text3);margin-bottom:5px;text-transform:uppercase;letter-spacing:.06em;font-weight:700;}
 .metric-value{font-size:22px;font-weight:700;color:var(--text);letter-spacing:-.03em;line-height:1;}
 .metric-sub{font-size:11px;color:var(--text3);margin-top:4px;}
-
-/* ── Map ── */
 .map-wrap{border:1px solid var(--border);border-radius:var(--radius-xl);overflow:hidden;margin-bottom:14px;position:relative;box-shadow:var(--shadow-md);z-index:0;isolation:isolate;}
 .map-canvas{width:100%;height:420px;background:var(--map-bg);}
 .map-legend{display:flex;gap:14px;flex-wrap:wrap;align-items:center;padding:10px 14px;background:var(--bg2);border-top:1px solid var(--border);font-size:11.5px;color:var(--text2);font-weight:500;}
@@ -244,8 +177,6 @@ tr.highlight-row td{color:var(--green-text) !important;font-weight:500;}
 .map-style-btn{font-size:11px;padding:3px 9px;border-radius:4px;background:transparent;border:none;color:var(--text3);cursor:pointer;font-weight:500;}
 .map-style-btn:hover{color:var(--text);background:var(--bg4);}
 .map-style-btn.active{background:var(--bg2);color:var(--text);box-shadow:0 1px 2px rgba(0,0,0,0.1);font-weight:600;}
-
-/* Leaflet overrides */
 .leaflet-container{font-family:var(--font) !important;background:var(--map-bg);}
 .leaflet-control-zoom{border:none !important;box-shadow:var(--shadow-md) !important;border-radius:var(--radius) !important;overflow:hidden;}
 .leaflet-control-zoom a{background:var(--bg2) !important;border:1px solid var(--border2) !important;color:var(--text) !important;font-weight:700 !important;font-family:var(--font) !important;}
@@ -273,8 +204,6 @@ tr.highlight-row td{color:var(--green-text) !important;font-weight:500;}
 .wh-marker-core{position:relative;width:16px;height:16px;border-radius:50%;border:2.5px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,0.3);}
 .wh-marker-label{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);font-size:11px;font-weight:700;white-space:nowrap;padding:3px 8px;border-radius:4px;background:rgba(255,255,255,0.97);box-shadow:0 1px 3px rgba(0,0,0,0.2);pointer-events:none;}
 @media(prefers-color-scheme:dark){.wh-marker-label{background:rgba(22,25,35,0.97);color:inherit;}}
-
-/* ── Priority picker ── */
 .priority-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px;}
 .priority-btn{padding:14px 16px;border-radius:var(--radius-lg);text-align:left;cursor:pointer;border:1.5px solid var(--border);background:var(--bg3);transition:all .15s;display:flex;flex-direction:column;gap:3px;line-height:1.4;}
 .priority-btn:hover{border-color:var(--border2);background:var(--bg4);}
@@ -284,8 +213,6 @@ tr.highlight-row td{color:var(--green-text) !important;font-weight:500;}
 .priority-btn.active .priority-btn-title{color:var(--blue-text);}
 .priority-btn-sub{font-size:11.5px;color:var(--text3);line-height:1.55;}
 .priority-btn.active .priority-btn-sub{color:var(--blue-text);opacity:.8;}
-
-/* ── Weight sliders ── */
 .weight-row{margin-bottom:14px;}
 .weight-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;}
 .weight-label{font-size:12.5px;font-weight:600;color:var(--text);}
@@ -294,15 +221,10 @@ tr.highlight-row td{color:var(--green-text) !important;font-weight:500;}
 .weight-total-chip{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600;padding:4px 11px;border-radius:20px;margin-bottom:12px;font-family:var(--mono);}
 .weight-total-ok{background:var(--green-bg);color:var(--green-text);border:1px solid var(--green-border);}
 .weight-total-bad{background:var(--amber-bg);color:var(--amber-text);border:1px solid rgba(180,83,9,.25);}
-
-/* ── WH count ── */
 .wh-count-row{display:flex;gap:8px;margin-bottom:4px;}
 .wh-count-btn{width:44px;height:44px;font-size:16px;font-weight:700;border-radius:var(--radius-lg);padding:0;display:flex;align-items:center;justify-content:center;color:var(--text);}
 .wh-count-btn.active{background:var(--blue);color:#fff;border-color:var(--blue);box-shadow:0 2px 8px rgba(37,99,235,0.28);}
-@media(prefers-color-scheme:dark){.wh-count-btn.active{color:#0a0f1a;}}
 .wh-count-hint{font-size:12px;color:var(--text3);margin-top:8px;line-height:1.6;}
-
-/* ── Pool toggle ── */
 .pool-toggle{display:flex;gap:8px;margin-bottom:4px;}
 .pool-btn{flex:1;padding:10px 14px;border-radius:var(--radius-lg);text-align:left;cursor:pointer;border:1.5px solid var(--border);background:var(--bg3);transition:all .15s;display:flex;flex-direction:column;gap:2px;}
 .pool-btn:hover{border-color:var(--border2);}
@@ -311,8 +233,6 @@ tr.highlight-row td{color:var(--green-text) !important;font-weight:500;}
 .pool-btn.active .pool-btn-title{color:var(--blue-text);}
 .pool-btn-sub{font-size:11.5px;color:var(--text3);}
 .pool-btn.active .pool-btn-sub{color:var(--blue-text);opacity:.8;}
-
-/* ── Score badges ── */
 .score-badge{display:inline-flex;align-items:center;gap:4px;padding:3px 9px;border-radius:20px;font-size:11.5px;font-weight:700;}
 .score-excellent{background:var(--score-excellent-bg);color:var(--score-excellent-text);}
 .score-good{background:var(--score-good-bg);color:var(--score-good-text);}
@@ -320,8 +240,6 @@ tr.highlight-row td{color:var(--green-text) !important;font-weight:500;}
 .score-poor{background:var(--score-poor-bg);color:var(--score-poor-text);}
 .score-bar-track{flex:1;height:5px;background:var(--bg4);border-radius:3px;min-width:40px;overflow:hidden;}
 .score-bar-fill{height:5px;border-radius:3px;transition:width .4s ease;}
-
-/* ── Recommendation card ── */
 .rec-card{background:var(--bg2);border:2px solid var(--blue);border-radius:var(--radius-xl);padding:24px 26px;margin-bottom:12px;box-shadow:0 0 0 4px rgba(37,99,235,0.07),var(--shadow-md);}
 .rec-eyebrow{font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px;}
 .rec-city{font-size:28px;font-weight:700;color:var(--text);letter-spacing:-.03em;margin-bottom:10px;}
@@ -338,8 +256,6 @@ tr.highlight-row td{color:var(--green-text) !important;font-weight:500;}
 .factor-bar-track{height:4px;background:var(--bg4);border-radius:2px;overflow:hidden;}
 .factor-bar-fill{height:4px;border-radius:2px;}
 .factor-context{font-size:10.5px;color:var(--text3);margin-top:5px;line-height:1.4;}
-
-/* ── Accordion panels ── */
 .accordion-wrap{display:flex;flex-direction:column;gap:8px;margin-bottom:18px;}
 .accordion-header{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 18px;background:var(--bg2);border:1px solid var(--border2);border-radius:var(--radius-lg);cursor:pointer;transition:background .15s,border-color .15s;user-select:none;}
 .accordion-header:hover{background:var(--bg3);}
@@ -355,13 +271,10 @@ tr.highlight-row td{color:var(--green-text) !important;font-weight:500;}
 .accordion-body{background:var(--bg2);border:1px solid var(--border2);border-top:none;border-radius:0 0 var(--radius-lg) var(--radius-lg);padding:24px;box-shadow:var(--shadow);overflow:hidden;animation:accordionOpen .18s ease;}
 .accordion-body.hidden{display:none;}
 @keyframes accordionOpen{from{opacity:0;transform:translateY(-6px);}to{opacity:1;transform:translateY(0);}}
-
-/* ── Calc panel styles ── */
 .calc-step{margin-bottom:22px;padding-bottom:22px;border-bottom:1px solid var(--border);}
 .calc-step:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
 .calc-step-title{font-size:12px;font-weight:700;color:var(--text);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;display:flex;align-items:center;gap:8px;}
 .calc-step-num{width:20px;height:20px;border-radius:50%;background:var(--blue);color:#fff;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-@media(prefers-color-scheme:dark){.calc-step-num{color:#0a0f1a;}}
 .calc-formula{font-family:var(--mono);font-size:12px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);padding:10px 14px;color:var(--text2);line-height:1.7;margin-bottom:10px;}
 .calc-formula span.hi{color:var(--blue);font-weight:600;}
 .calc-formula span.hi2{color:var(--green);font-weight:600;}
@@ -375,8 +288,6 @@ tr.highlight-row td{color:var(--green-text) !important;font-weight:500;}
 .final-score-box{display:flex;align-items:center;gap:16px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-lg);padding:16px 20px;margin-top:10px;}
 .final-score-big{font-size:40px;font-weight:700;color:var(--blue);font-family:var(--mono);letter-spacing:-.04em;line-height:1;}
 .final-score-detail{font-size:12.5px;color:var(--text2);line-height:1.7;}
-
-/* ── Break-even panel ── */
 .be-inputs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px;}
 .be-field label{display:block;font-size:12px;font-weight:600;color:var(--text2);margin-bottom:5px;}
 .be-field .hint{font-size:11px;color:var(--text3);margin-top:4px;line-height:1.5;}
@@ -391,72 +302,57 @@ tr.highlight-row td{color:var(--green-text) !important;font-weight:500;}
 .be-bar-track{height:10px;background:var(--bg4);border-radius:5px;overflow:hidden;position:relative;}
 .be-bar-fill{height:10px;border-radius:5px;transition:width .5s ease;}
 .be-bar-marker{position:absolute;top:-3px;width:2px;height:16px;background:var(--text3);border-radius:1px;}
-
-/* ── Transit ── */
 .transit-row{display:flex;gap:8px;margin-top:16px;padding-top:16px;border-top:1px solid var(--border);}
 .transit-cell{flex:1;text-align:center;background:var(--bg3);border-radius:var(--radius-lg);padding:10px 6px;border:1px solid var(--border);}
 .transit-num{font-size:20px;font-weight:700;color:var(--text);font-family:var(--mono);}
 .transit-lbl{font-size:10px;color:var(--text2);margin-top:2px;text-transform:uppercase;letter-spacing:.05em;font-weight:600;}
 .transit-sub{font-size:9.5px;color:var(--text3);margin-top:1px;}
-
-/* ── WH network cards ── */
 .wh-network{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px;}
 .wh-net-card{flex:1;min-width:140px;background:var(--bg2);border:1.5px solid var(--border);border-radius:var(--radius-xl);padding:14px 16px;box-shadow:var(--shadow);cursor:pointer;transition:all .15s;}
 .wh-net-card:hover{border-color:var(--border2);}
-
-/* ── CoG box ── */
 .cog-box{background:var(--bg3);border-radius:var(--radius-lg);padding:12px 16px;font-size:12.5px;color:var(--text2);margin-bottom:14px;line-height:1.7;border:1px solid var(--border);}
 .cog-box strong{color:var(--text);font-weight:600;}
-
-/* ── Info strip ── */
 .info-strip{padding:10px 14px;border-radius:var(--radius-lg);font-size:12.5px;line-height:1.65;margin-bottom:14px;display:flex;align-items:flex-start;gap:9px;font-weight:500;}
 .info-strip-icon{flex-shrink:0;font-size:14px;margin-top:1px;}
 .info-blue{background:var(--blue-bg);border:1px solid var(--blue-border);color:var(--blue-text);}
-.info-blue a{color:var(--blue-text);text-decoration:underline;font-weight:700;}
-
-/* ── Subtle hint ── */
 .subtle-hint{display:flex;align-items:center;gap:9px;padding:9px 13px;margin-bottom:14px;background:var(--bg2);border:1px solid var(--border2);border-left:3px solid var(--blue);border-radius:var(--radius-lg);font-size:12.5px;color:var(--text2);box-shadow:var(--shadow);}
 .subtle-hint-text{flex:1;}
 .subtle-hint-text strong{color:var(--text);font-weight:600;}
 .subtle-hint-action{font-size:12px;padding:4px 11px;background:var(--blue-bg);border:1px solid var(--blue-border);color:var(--blue-text);border-radius:var(--radius);font-weight:600;white-space:nowrap;flex-shrink:0;}
 .subtle-hint-dismiss{background:transparent;border:none;color:var(--text3);font-size:15px;padding:3px 5px;cursor:pointer;flex-shrink:0;}
 .subtle-hint-dismiss:hover{color:var(--text);background:transparent;}
-
-/* ── Scenario ── */
 .scenario-bar{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-xl);padding:12px 16px;margin-bottom:14px;}
 .scenario-list{display:flex;gap:7px;flex-wrap:wrap;margin-top:8px;}
 .scenario-chip{padding:5px 12px;font-size:12px;border-radius:var(--radius-lg);background:var(--bg3);border:1px solid var(--border);display:flex;align-items:center;gap:5px;cursor:pointer;transition:all .15s;color:var(--text);font-weight:500;}
 .scenario-chip:hover{background:var(--bg4);}
 .scenario-chip.active-chip{background:var(--blue-bg);border-color:var(--blue-border);color:var(--blue-text);font-weight:600;}
-
-/* ── Toast ── */
 #toastContainer{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);z-index:9999;display:flex;flex-direction:column;gap:8px;pointer-events:none;}
 .toast{background:var(--toast-bg);color:var(--toast-text);padding:10px 16px;border-radius:var(--radius-lg);font-size:13px;display:flex;align-items:center;gap:10px;box-shadow:var(--shadow-lg);pointer-events:all;animation:toastIn .2s ease;white-space:nowrap;border:1px solid rgba(255,255,255,0.08);font-weight:500;}
 .toast.out{animation:toastOut .2s ease forwards;}
 .toast-undo{background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,.25);color:var(--toast-text);padding:3px 10px;font-size:12px;cursor:pointer;border-radius:4px;font-weight:600;}
 @keyframes toastIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
 @keyframes toastOut{to{opacity:0;transform:translateY(6px);}}
-
-/* ── Normalize ── */
 .normalize-alert{background:var(--amber-bg);border:1px solid rgba(180,83,9,.22);border-radius:var(--radius-lg);padding:9px 13px;margin-bottom:12px;display:flex;align-items:center;gap:10px;font-size:12.5px;color:var(--amber-text);}
 .normalize-alert button{font-size:12px;padding:3px 11px;background:var(--amber);color:#fff;border:none;border-radius:var(--radius);font-weight:600;}
-
-/* ── Type badges ── */
 .type-badge-custom{font-size:10px;padding:2px 7px;border-radius:20px;background:var(--blue-bg);color:var(--blue-text);border:1px solid var(--blue-border);font-weight:700;}
 .type-badge-db{font-size:10px;padding:2px 7px;border-radius:20px;background:#fff7ed;color:#7c2d12;border:1px solid #fdba74;font-weight:700;}
 @media(prefers-color-scheme:dark){.type-badge-db{background:rgba(251,146,60,0.15);color:#fed7aa;border-color:rgba(251,146,60,0.4);}}
-
-/* ── Export row ── */
 .export-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;}
 .section-heading{font-size:13px;font-weight:700;margin-bottom:10px;color:var(--text);}
-
-/* ── Utility ── */
 .row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;}
 .spacer{flex:1;}
 .divider{height:1px;background:var(--border);margin:16px 0;}
 .action-cell{display:flex;gap:4px;align-items:center;}
-
-/* ── Responsive ── */
+/* Export dropdown */
+.export-dropdown{position:relative;display:inline-block;}
+.export-dropdown-menu{position:absolute;top:calc(100% + 4px);left:0;background:var(--bg2);border:1px solid var(--border2);border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);z-index:500;min-width:190px;overflow:hidden;display:none;}
+.export-dropdown-menu.open{display:block;}
+.export-dropdown-item{display:flex;align-items:center;gap:9px;padding:10px 14px;font-size:13px;color:var(--text);cursor:pointer;border:none;background:transparent;width:100%;text-align:left;transition:background .12s;font-family:var(--font);}
+.export-dropdown-item:hover{background:var(--bg3);}
+.export-dropdown-item .exp-icon{font-size:15px;flex-shrink:0;}
+.export-dropdown-item .exp-label{font-weight:600;}
+.export-dropdown-item .exp-sub{font-size:11px;color:var(--text3);margin-top:1px;}
+.export-dropdown-divider{height:1px;background:var(--border);margin:2px 0;}
 @media(max-width:620px){
   .header{padding:0 16px;}.container{padding:16px 14px;}.card{padding:14px;}
   th,td{padding:7px 9px;font-size:11.5px;}.priority-grid{grid-template-columns:1fr;}
@@ -490,6 +386,8 @@ tr.highlight-row td{color:var(--green-text) !important;font-weight:500;}
 <div class="container"><div id="stepContent"></div></div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
 <script>
 // ─── City data ────────────────────────────────────────────────────────────────
 const CITIES_MAJOR=[
@@ -556,6 +454,8 @@ const CITIES_MAJOR=[
   {name:"Virginia Beach",state:"VA",lat:36.853,lng:-75.979,pop:1.8,labor:0.90,land:0.85},
   {name:"Wichita",state:"KS",lat:37.688,lng:-97.336,pop:0.6,labor:0.87,land:0.67},
 ];
+
+// Mid-size metros (31)
 const CITIES_EXTRA=[
   {name:"Akron",state:"OH",lat:41.081,lng:-81.519,pop:0.70,labor:0.89,land:0.70},
   {name:"Albany",state:"NY",lat:42.651,lng:-73.755,pop:0.90,labor:1.05,land:0.90},
@@ -590,6 +490,67 @@ const CITIES_EXTRA=[
   {name:"Worcester",state:"MA",lat:42.263,lng:-71.801,pop:1.00,labor:1.15,land:1.10},
 ];
 
+// Smaller cities (56) — brings total pool to 147
+const CITIES_SMALL=[
+  {name:"Abilene",state:"TX",lat:32.449,lng:-99.733,pop:0.17,labor:0.83,land:0.62},
+  {name:"Appleton",state:"WI",lat:44.262,lng:-88.416,pop:0.24,labor:0.93,land:0.75},
+  {name:"Augusta",state:"GA",lat:33.470,lng:-82.011,pop:0.61,labor:0.84,land:0.68},
+  {name:"Bakersfield",state:"CA",lat:35.373,lng:-119.019,pop:0.91,labor:1.10,land:0.95},
+  {name:"Beaumont",state:"TX",lat:30.080,lng:-94.126,pop:0.41,labor:0.87,land:0.68},
+  {name:"Boulder",state:"CO",lat:40.015,lng:-105.270,pop:0.32,labor:1.15,land:1.20},
+  {name:"Brownsville",state:"TX",lat:25.902,lng:-97.498,pop:0.43,labor:0.80,land:0.62},
+  {name:"Canton",state:"OH",lat:40.799,lng:-81.379,pop:0.40,labor:0.88,land:0.68},
+  {name:"Cedar Rapids",state:"IA",lat:41.978,lng:-91.666,pop:0.27,labor:0.90,land:0.70},
+  {name:"Champaign",state:"IL",lat:40.116,lng:-88.243,pop:0.24,labor:0.92,land:0.72},
+  {name:"Charleston",state:"SC",lat:32.776,lng:-79.931,pop:0.77,labor:0.87,land:0.82},
+  {name:"Charleston",state:"WV",lat:38.350,lng:-81.633,pop:0.21,labor:0.88,land:0.65},
+  {name:"Corpus Christi",state:"TX",lat:27.801,lng:-97.396,pop:0.45,labor:0.84,land:0.65},
+  {name:"Eugene",state:"OR",lat:44.052,lng:-123.087,pop:0.37,labor:1.05,land:0.95},
+  {name:"Evansville",state:"IN",lat:37.972,lng:-87.571,pop:0.31,labor:0.87,land:0.67},
+  {name:"Flint",state:"MI",lat:43.013,lng:-83.688,pop:0.41,labor:0.88,land:0.65},
+  {name:"Fort Smith",state:"AR",lat:35.386,lng:-94.398,pop:0.25,labor:0.82,land:0.62},
+  {name:"Fort Worth",state:"TX",lat:32.755,lng:-97.330,pop:0.95,labor:0.93,land:0.78},
+  {name:"Gainesville",state:"FL",lat:29.652,lng:-82.325,pop:0.33,labor:0.86,land:0.80},
+  {name:"Green Bay",state:"WI",lat:44.519,lng:-88.020,pop:0.32,labor:0.92,land:0.73},
+  {name:"Greenville",state:"SC",lat:34.851,lng:-82.398,pop:0.92,labor:0.86,land:0.75},
+  {name:"Gulfport",state:"MS",lat:30.367,lng:-89.093,pop:0.27,labor:0.82,land:0.63},
+  {name:"Kennewick",state:"WA",lat:46.211,lng:-119.137,pop:0.31,labor:1.02,land:0.88},
+  {name:"Killeen",state:"TX",lat:31.117,lng:-97.728,pop:0.45,labor:0.83,land:0.65},
+  {name:"Lafayette",state:"LA",lat:30.224,lng:-92.019,pop:0.49,labor:0.85,land:0.68},
+  {name:"Lakeland",state:"FL",lat:28.040,lng:-81.950,pop:0.73,labor:0.86,land:0.82},
+  {name:"Lancaster",state:"PA",lat:40.038,lng:-76.306,pop:0.55,labor:0.95,land:0.80},
+  {name:"Lansing",state:"MI",lat:42.733,lng:-84.556,pop:0.54,labor:0.92,land:0.73},
+  {name:"Laredo",state:"TX",lat:27.506,lng:-99.507,pop:0.27,labor:0.79,land:0.60},
+  {name:"Lubbock",state:"TX",lat:33.578,lng:-101.856,pop:0.33,labor:0.84,land:0.65},
+  {name:"Macon",state:"GA",lat:32.841,lng:-83.633,pop:0.23,labor:0.83,land:0.65},
+  {name:"McAllen",state:"TX",lat:26.204,lng:-98.230,pop:0.86,labor:0.80,land:0.62},
+  {name:"Medford",state:"OR",lat:42.326,lng:-122.876,pop:0.22,labor:1.03,land:0.92},
+  {name:"Modesto",state:"CA",lat:37.639,lng:-120.997,pop:0.55,labor:1.12,land:1.05},
+  {name:"Montgomery",state:"AL",lat:32.361,lng:-86.279,pop:0.37,labor:0.83,land:0.65},
+  {name:"Murfreesboro",state:"TN",lat:35.846,lng:-86.390,pop:0.35,labor:0.86,land:0.73},
+  {name:"Myrtle Beach",state:"SC",lat:33.689,lng:-78.887,pop:0.48,labor:0.85,land:0.80},
+  {name:"Ogden",state:"UT",lat:41.223,lng:-111.974,pop:0.59,labor:0.90,land:0.85},
+  {name:"Palm Bay",state:"FL",lat:28.035,lng:-80.589,pop:0.83,labor:0.87,land:0.85},
+  {name:"Peoria",state:"IL",lat:40.694,lng:-89.589,pop:0.38,labor:0.90,land:0.70},
+  {name:"Provo",state:"UT",lat:40.234,lng:-111.659,pop:0.62,labor:0.90,land:0.87},
+  {name:"Reading",state:"PA",lat:40.335,lng:-75.927,pop:0.43,labor:0.95,land:0.78},
+  {name:"Rockford",state:"IL",lat:42.271,lng:-89.094,pop:0.34,labor:0.90,land:0.70},
+  {name:"Salinas",state:"CA",lat:36.678,lng:-121.655,pop:0.43,labor:1.20,land:1.30},
+  {name:"Santa Rosa",state:"CA",lat:38.440,lng:-122.714,pop:0.50,labor:1.30,land:1.40},
+  {name:"Shreveport",state:"LA",lat:32.525,lng:-93.750,pop:0.44,labor:0.83,land:0.65},
+  {name:"South Bend",state:"IN",lat:41.684,lng:-86.252,pop:0.32,labor:0.88,land:0.70},
+  {name:"Springfield",state:"IL",lat:39.801,lng:-89.644,pop:0.21,labor:0.90,land:0.70},
+  {name:"Springfield",state:"MA",lat:42.102,lng:-72.590,pop:0.63,labor:1.12,land:1.00},
+  {name:"Stockton",state:"CA",lat:37.957,lng:-121.291,pop:0.78,labor:1.12,land:1.05},
+  {name:"Syracuse",state:"NY",lat:43.048,lng:-76.147,pop:0.66,labor:1.02,land:0.78},
+  {name:"Topeka",state:"KS",lat:39.056,lng:-95.690,pop:0.23,labor:0.87,land:0.67},
+  {name:"Trenton",state:"NJ",lat:40.217,lng:-74.756,pop:0.37,labor:1.10,land:1.05},
+  {name:"Visalia",state:"CA",lat:36.330,lng:-119.292,pop:0.48,labor:1.08,land:0.92},
+  {name:"Waco",state:"TX",lat:31.549,lng:-97.146,pop:0.27,labor:0.84,land:0.65},
+  {name:"Waterloo",state:"IA",lat:42.493,lng:-92.343,pop:0.17,labor:0.88,land:0.68},
+  {name:"Youngstown",state:"OH",lat:41.100,lng:-80.649,pop:0.54,labor:0.88,land:0.65},
+];
+
 const WH_COLORS=["#2563eb","#059669","#d97706","#7c3aed","#dc2626"];
 
 const PRIORITY_PRESETS=[
@@ -600,9 +561,15 @@ const PRIORITY_PRESETS=[
 ];
 
 function getCandidateCities(){
-  if(state.candidateMode==='all'){const seen=new Set(CITIES_MAJOR.map(c=>c.name+c.state));return[...CITIES_MAJOR,...CITIES_EXTRA.filter(c=>!seen.has(c.name+c.state))];}
+  if(state.candidateMode==='all'){
+    const seen=new Set(CITIES_MAJOR.map(c=>c.name+c.state));
+    const allExtra=[...CITIES_EXTRA,...CITIES_SMALL];
+    return[...CITIES_MAJOR,...allExtra.filter(c=>!seen.has(c.name+c.state))];
+  }
   return CITIES_MAJOR;
 }
+const ALL_CITY_COUNT = CITIES_MAJOR.length + CITIES_EXTRA.length + CITIES_SMALL.length;
+
 function isDarkMode(){return window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;}
 
 // ─── Map ─────────────────────────────────────────────────────────────────────
@@ -695,7 +662,14 @@ function buildLegend(warehouses,hasCustom,opts){
   const styles=[{k:'light',label:'Light'},{k:'dark',label:'Dark'},{k:'terrain',label:'Terrain'},{k:'satellite',label:'Satellite'}];
   return `<div class="map-legend">${items}<div class="spacer"></div><div class="map-style-toggle no-print">${styles.map(s=>`<button class="map-style-btn${preferredTileStyle===s.k?' active':''}" data-tile="${s.k}">${s.label}</button>`).join('')}</div></div>`;
 }
-document.addEventListener('click',e=>{const btn=e.target.closest('.map-style-btn');if(!btn)return;const ns=btn.dataset.tile;if(ns===preferredTileStyle)return;preferredTileStyle=ns;render();});
+document.addEventListener('click',e=>{
+  // Tile style toggle
+  const btn=e.target.closest('.map-style-btn');
+  if(btn){const ns=btn.dataset.tile;if(ns===preferredTileStyle)return;preferredTileStyle=ns;render();return;}
+  // Close export dropdown if click outside
+  const dd=e.target.closest('.export-dropdown');
+  if(!dd){document.querySelectorAll('.export-dropdown-menu.open').forEach(m=>m.classList.remove('open'));}
+});
 if(window.matchMedia){const mql=window.matchMedia('(prefers-color-scheme: dark)');const chg=()=>{if(preferredTileStyle==='light'&&isDarkMode())preferredTileStyle='dark';else if(preferredTileStyle==='dark'&&!isDarkMode())preferredTileStyle='light';render();};if(mql.addEventListener)mql.addEventListener('change',chg);else if(mql.addListener)mql.addListener(chg);}
 
 // ─── Core Algorithms ─────────────────────────────────────────────────────────
@@ -703,11 +677,6 @@ function haversine(la1,lo1,la2,lo2){const R=6371,dLa=(la2-la1)*Math.PI/180,dLo=(
 const roadDist=(a,b,c,d)=>haversine(a,b,c,d)*1.3;
 function normalize(vals){const mn=Math.min(...vals),mx=Math.max(...vals);if(mx===mn)return vals.map(()=>0.5);return vals.map(v=>(v-mn)/(mx-mn));}
 
-// scoreAll: score every city against the given suppliers. Returns absolute scores
-// that reflect each city's true position among ALL candidates — not just relative
-// to the other selected warehouses. This means:
-//   85/100 = genuinely better than 85% of all evaluated cities
-//   13/100 = genuinely worse than 87% of all cities for these suppliers
 function scoreAll(sups,cities,w){
   if(!sups.length)return cities.map(c=>({...c,transportKm:0,composite:0.5,suitability:50,nT:0.5,nLb:0.5,nLn:0.5,nWf:0.5,rawT:0,rawLb:c.labor,rawLn:c.land,rawWf:1/(c.pop+0.1)}));
   const td=sups.reduce((s,x)=>s+x.demand,0)||1;
@@ -721,15 +690,11 @@ function scoreAll(sups,cities,w){
   }).sort((a,b)=>a.composite-b.composite);
 }
 
-// For each warehouse in a multi-WH network, score it ABSOLUTELY against all
-// candidate cities using its own assigned suppliers as the reference demand.
-// This gives a meaningful number: "how good is this city vs all alternatives
-// for the suppliers it's actually serving?"
-function scoreWarehouseAbsolute(wh, allCities, weights){
-  if(!wh.suppliers.length) return {...wh.city, suitability:50, transportKm:0, nT:0.5, nLb:0.5, nLn:0.5, nWf:0.5, rawT:0, rawLb:wh.city.labor, rawLn:wh.city.land, rawWf:1/(wh.city.pop+0.1)};
-  const scored = scoreAll(wh.suppliers, allCities, weights);
-  const found  = scored.find(c=>c.name===wh.city.name&&c.state===wh.city.state);
-  return found || scored[0];
+function scoreWarehouseAbsolute(wh,allCities,weights){
+  if(!wh.suppliers.length)return{...wh.city,suitability:50,transportKm:0,nT:0.5,nLb:0.5,nLn:0.5,nWf:0.5,rawT:0,rawLb:wh.city.labor,rawLn:wh.city.land,rawWf:1/(wh.city.pop+0.1)};
+  const scored=scoreAll(wh.suppliers,allCities,weights);
+  const found=scored.find(c=>c.name===wh.city.name&&c.state===wh.city.state);
+  return found||scored[0];
 }
 
 function multiWH(sups,cities,k,w){
@@ -765,9 +730,8 @@ function calcTransitReach(wh){
   wh.suppliers.forEach(sup=>{const km=roadDist(wh.city.lat,wh.city.lng,sup.lat,sup.lng);if(km<=D)d1++;if(km<=D*2)d2++;if(km<=D*3)d3++;});
   return{d1,d2,d3,total:wh.suppliers.length};
 }
-
 function networkAvgDist(warehouses){
-  const totalD=warehouses.reduce((s,wh)=>s+wh.suppliers.reduce((ss,sup)=>ss+sup.demand,0),0)||1;
+  const totalD=warehouses.reduce((s,wh)=>s+wh.suppliers.reduce((ss,x)=>ss+x.demand,0),0)||1;
   const tdxkm=warehouses.reduce((s,wh)=>{const td=wh.suppliers.reduce((ss,x)=>ss+x.demand,0)||0;if(!td)return s;const km=wh.suppliers.reduce((ss,sup)=>ss+sup.demand*roadDist(wh.city.lat,wh.city.lng,sup.lat,sup.lng),0)/td;return s+km*td;},0);
   return tdxkm/totalD;
 }
@@ -796,7 +760,7 @@ let state={
   weights:{transport:35,labor:25,land:25,workforce:15},
   candidateMode:'major',results:null,scenarios:[],
   reductionHintDismissed:false,selectedWHIdx:0,
-  activePanel:'calc', // 'calc' | 'breakeven' | null
+  activePanel:null,
   breakeven:{fixed:500000,freight:0.001},
 };
 
@@ -947,7 +911,7 @@ function buildStep1(){
 function buildStep2(){
   const c=document.createElement('div');
   const wb=document.createElement('div');wb.className='welcome-banner';wb.style.marginBottom='22px';
-  wb.innerHTML=`<div class="welcome-icon">🎯</div><div><div class="welcome-title">What matters most for your business?</div><div class="welcome-text">Pick a priority below. The model evaluates ${getCandidateCities().length} US cities and ranks them accordingly.</div><div class="welcome-steps"><span class="welcome-step-chip done">① Locations added</span><span class="welcome-step-chip current">② Set priorities</span><span class="welcome-step-chip">③ See results</span></div></div>`;
+  wb.innerHTML=`<div class="welcome-icon">🎯</div><div><div class="welcome-title">What matters most for your business?</div><div class="welcome-text">Pick a priority below. The model evaluates up to ${ALL_CITY_COUNT} US cities and ranks them accordingly.</div><div class="welcome-steps"><span class="welcome-step-chip done">① Locations added</span><span class="welcome-step-chip current">② Set priorities</span><span class="welcome-step-chip">③ See results</span></div></div>`;
   c.appendChild(wb);
 
   const priCard=document.createElement('div');priCard.className='card';
@@ -971,7 +935,7 @@ function buildStep2(){
   [1,2,3,4,5].forEach(n=>{const b=document.createElement('button');b.className='wh-count-btn'+(state.numWH===n?' active':'');b.textContent=n;b.onclick=()=>{state.numWH=n;render();};whCard.querySelector('#whBtns').appendChild(b);});
 
   const poolCard=document.createElement('div');poolCard.className='card';
-  poolCard.innerHTML=`<div class="card-title">Candidate city pool</div><div class="pool-toggle"><button class="pool-btn${state.candidateMode==='major'?' active':''}" id="poolMaj"><div class="pool-btn-title">⭐ Major metros <span style="font-size:11px;font-weight:400;">(${CITIES_MAJOR.length} cities)</span></div><div class="pool-btn-sub">Largest US markets with established logistics networks.</div></button><button class="pool-btn${state.candidateMode==='all'?' active':''}" id="poolAll"><div class="pool-btn-title">🗺 All US cities <span style="font-size:11px;font-weight:400;">(${CITIES_MAJOR.length+CITIES_EXTRA.length} cities)</span></div><div class="pool-btn-sub">Includes smaller markets — may surface lower-cost options.</div></button></div>`;
+  poolCard.innerHTML=`<div class="card-title">Candidate city pool</div><div class="pool-toggle"><button class="pool-btn${state.candidateMode==='major'?' active':''}" id="poolMaj"><div class="pool-btn-title">⭐ Major metros <span style="font-size:11px;font-weight:400;">(${CITIES_MAJOR.length} cities)</span></div><div class="pool-btn-sub">Largest US markets with established logistics networks.</div></button><button class="pool-btn${state.candidateMode==='all'?' active':''}" id="poolAll"><div class="pool-btn-title">🗺 All US cities <span style="font-size:11px;font-weight:400;">(${ALL_CITY_COUNT} cities)</span></div><div class="pool-btn-sub">Includes mid-size and smaller markets — may surface lower-cost options.</div></button></div>`;
   c.appendChild(poolCard);
   poolCard.querySelector('#poolMaj').onclick=()=>{state.candidateMode='major';render();};
   poolCard.querySelector('#poolAll').onclick=()=>{state.candidateMode='all';render();};
@@ -1005,12 +969,46 @@ function buildStep3(){
   const cities=getCandidateCities();
   const c=document.createElement('div');
 
+  // ── Export row with dropdown ──────────────────────────────────────────────
   const expRow=document.createElement('div');expRow.className='export-row no-print';
-  expRow.innerHTML=`<button class="btn-primary" id="expCSV">↓ Download results (CSV)</button><button id="expPrint" style="padding:9px 18px;font-size:13px;">⎙ Print</button><button id="expBack" class="btn-ghost" style="padding:9px 16px;font-size:13px;">← Adjust settings</button>`;
+
+  const expDD=document.createElement('div');expDD.className='export-dropdown';
+  expDD.innerHTML=`<button class="btn-primary" id="expBtn" style="display:flex;align-items:center;gap:7px;">↓ Export report <span style="font-size:10px;opacity:.7;">▾</span></button>
+    <div class="export-dropdown-menu" id="expMenu">
+      <button class="export-dropdown-item" id="expCSV">
+        <span class="exp-icon">📊</span>
+        <div><div class="exp-label">Download CSV</div><div class="exp-sub">All ${r.cityCount} cities, full scores</div></div>
+      </button>
+      <div class="export-dropdown-divider"></div>
+      <button class="export-dropdown-item" id="expPDF">
+        <span class="exp-icon">📄</span>
+        <div><div class="exp-label">Download PDF</div><div class="exp-sub">Formatted report with tables</div></div>
+      </button>
+      <button class="export-dropdown-item" id="expDOCX">
+        <span class="exp-icon">📝</span>
+        <div><div class="exp-label">Download Word (.doc)</div><div class="exp-sub">Editable report document</div></div>
+      </button>
+    </div>`;
+  expRow.appendChild(expDD);
+
+  const printBtn=document.createElement('button');printBtn.id='expPrint';printBtn.style.cssText='padding:9px 18px;font-size:13px;';printBtn.textContent='⎙ Print';printBtn.onclick=()=>window.print();
+  expRow.appendChild(printBtn);
+
+  const backBtn=document.createElement('button');backBtn.id='expBack';backBtn.className='btn-ghost';backBtn.style.cssText='padding:9px 16px;font-size:13px;';backBtn.textContent='← Adjust settings';backBtn.onclick=()=>{state.step=1;render();};
+  expRow.appendChild(backBtn);
+
   c.appendChild(expRow);
-  expRow.querySelector('#expCSV').onclick=exportCSV;
-  expRow.querySelector('#expPrint').onclick=()=>window.print();
-  expRow.querySelector('#expBack').onclick=()=>{state.step=1;render();};
+
+  // Wire up dropdown
+  setTimeout(()=>{
+    const btn=document.getElementById('expBtn'),menu=document.getElementById('expMenu');
+    if(btn&&menu){
+      btn.onclick=e=>{e.stopPropagation();menu.classList.toggle('open');};
+      document.getElementById('expCSV').onclick=()=>{menu.classList.remove('open');exportCSV();};
+      document.getElementById('expPDF').onclick=()=>{menu.classList.remove('open');exportPDF();};
+      document.getElementById('expDOCX').onclick=()=>{menu.classList.remove('open');exportDOCX();};
+    }
+  },0);
 
   if(r.actualWH<r.requestedWH&&!state.reductionHintDismissed){
     const hint=document.createElement('div');hint.className='subtle-hint no-print';
@@ -1035,7 +1033,6 @@ function buildStep3(){
       const card=document.createElement('div');card.className='wh-net-card';
       const isSel=i===state.selectedWHIdx;
       card.style.cssText=`border-top:3px solid ${WH_COLORS[i]};opacity:${isSel?'1':'0.6'};${isSel?`box-shadow:0 0 0 2px ${WH_COLORS[i]},var(--shadow-md);`:''}`;
-      // Get absolute score for this warehouse
       const wscore=scoreWarehouseAbsolute(wh,cities,r.weights);
       const wsl=scoreLabel(wscore.suitability);
       card.innerHTML=`<div style="font-size:10px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:5px;display:flex;align-items:center;gap:5px;">WH ${i+1}${isSel?`<span style="font-size:9px;padding:1px 6px;border-radius:20px;background:${WH_COLORS[i]}18;color:${WH_COLORS[i]};border:1px solid ${WH_COLORS[i]}44;font-weight:700;">Viewing</span>`:''}</div><div style="font-size:16px;font-weight:700;color:var(--text);margin-bottom:3px;">${wh.city.name}, ${wh.city.state}</div><div style="margin-bottom:4px;"><span class="score-badge ${wsl.cls}" style="font-size:10px;">${wscore.suitability}/100 — ${wsl.text}</span></div><div style="font-size:12px;color:var(--text2);">Serves ${wh.suppliers.length} location${wh.suppliers.length!==1?'s':''}</div><div style="font-size:11.5px;color:var(--text3);margin-top:3px;line-height:1.5;">${wh.suppliers.map(s=>s.name).join(', ')}</div>`;
@@ -1062,15 +1059,9 @@ function buildStep3(){
   const selWH=r.warehouses.length>0?r.warehouses[selIdx]:null;
   const topLabel=r.warehouses.length>1?`Warehouse ${selIdx+1} of ${r.warehouses.length}`:'★ Top recommendation';
   const recColor=r.warehouses.length>1?WH_COLORS[selIdx]:'var(--blue)';
-
-  // KEY FIX: Score the warehouse against ALL candidates using its own suppliers.
-  // This gives a real absolute score, not a relative-to-other-WH score.
   let scored;
-  if(r.warehouses.length>1&&selWH){
-    scored=scoreWarehouseAbsolute(selWH,cities,r.weights);
-  } else {
-    scored=top;
-  }
+  if(r.warehouses.length>1&&selWH){scored=scoreWarehouseAbsolute(selWH,cities,r.weights);}
+  else{scored=top;}
   const topCity=scored;
   const topSuit=scored.suitability;
   const topLO=scoreLabel(topSuit);
@@ -1079,7 +1070,6 @@ function buildStep3(){
 
   const recCard=document.createElement('div');recCard.className='rec-card';
   recCard.style.borderColor=recColor;recCard.style.boxShadow=`0 0 0 4px ${recColor}10,var(--shadow-md)`;
-
   recCard.innerHTML=`<div class="rec-eyebrow" style="color:${recColor};">${topLabel}</div>
     <div class="rec-city">${topCity.name}, ${topCity.state}</div>
     <div class="rec-badges">
@@ -1099,7 +1089,6 @@ function buildStep3(){
     </div>`:''}`;
   c.appendChild(recCard);
 
-  // CoG box (single WH only)
   if(r.warehouses.length<=1){
     const cogBox=document.createElement('div');cogBox.className='cog-box';
     let ct=`<strong>Center of Gravity check:</strong> A simple distance-only model points to <strong>${r.cogNearest.name}, ${r.cogNearest.state}</strong>.`;
@@ -1110,44 +1099,26 @@ function buildStep3(){
 
   // ── Accordion panels ────────────────────────────────────────────────────────
   const accordionWrap=document.createElement('div');accordionWrap.className='accordion-wrap no-print';
-
   const accordions=[
-    {id:'calc',    icon:'🔢', label:'How we calculated this',     sub:'Step-by-step breakdown of the scoring math'},
-    {id:'breakeven',icon:'💰',label:'Break-even calculator',       sub:'Is adding a warehouse worth the fixed cost?'},
+    {id:'calc',icon:'🔢',label:'How we calculated this',sub:'Step-by-step breakdown of the scoring math'},
+    {id:'breakeven',icon:'💰',label:'Break-even calculator',sub:'Is adding a warehouse worth the fixed cost?'},
   ];
-
   const panelBodies={};
-
   accordions.forEach(acc=>{
-    // Header (always visible, acts as toggle)
     const header=document.createElement('div');header.className='accordion-header'+(state.activePanel===acc.id?' open':'');
     header.innerHTML=`<div class="accordion-header-left"><span class="accordion-icon">${acc.icon}</span><div><div class="accordion-label">${acc.label}</div><div class="accordion-sublabel">${acc.sub}</div></div></div><span class="accordion-chevron">▼</span>`;
-
-    // Body (hidden by default)
     const body=document.createElement('div');body.className='accordion-body'+(state.activePanel===acc.id?'':' hidden');
     panelBodies[acc.id]=body;
-
     header.onclick=()=>{
-      const isOpen=state.activePanel===acc.id;
-      state.activePanel=isOpen?null:acc.id;
-      // Update all headers and bodies
+      const isOpen=state.activePanel===acc.id;state.activePanel=isOpen?null:acc.id;
       accordionWrap.querySelectorAll('.accordion-header').forEach(h=>h.classList.remove('open'));
       Object.values(panelBodies).forEach(b=>b.classList.add('hidden'));
-      if(!isOpen){
-        header.classList.add('open');
-        body.classList.remove('hidden');
-        renderPanel(body,acc.id,scored,r,selWH,totalDemand);
-      }
+      if(!isOpen){header.classList.add('open');body.classList.remove('hidden');renderPanel(body,acc.id,scored,r,selWH,totalDemand);}
     };
-
-    // Render immediately if this panel is active
-    if(state.activePanel===acc.id) renderPanel(body,acc.id,scored,r,selWH,totalDemand);
-
-    const wrapper=document.createElement('div');
-    wrapper.appendChild(header);wrapper.appendChild(body);
+    if(state.activePanel===acc.id)renderPanel(body,acc.id,scored,r,selWH,totalDemand);
+    const wrapper=document.createElement('div');wrapper.appendChild(header);wrapper.appendChild(body);
     accordionWrap.appendChild(wrapper);
   });
-
   c.appendChild(accordionWrap);
 
   // ── Top-10 table ────────────────────────────────────────────────────────────
@@ -1167,7 +1138,6 @@ function buildStep3(){
   });
   tbl.appendChild(tbody);tWrap.appendChild(tbl);c.appendChild(tWrap);
   const n2=document.createElement('p');n2.style.cssText='font-size:11.5px;color:var(--text3);margin-bottom:16px;';n2.textContent=`Top 10 shown. Download CSV for all ${r.cityCount} cities with full score breakdown.`;c.appendChild(n2);
-
   const meth=document.createElement('div');meth.className='info-strip info-blue';
   meth.innerHTML=`<div class="info-strip-icon">ℹ</div><div><strong>Scoring is absolute:</strong> Each city's score (0–100) reflects how it ranks against all ${r.cityCount} candidates evaluated for your specific supplier locations — not relative to other selected warehouses. A score of 75 means this city outperforms 75% of all alternatives for your network.</div>`;
   c.appendChild(meth);
@@ -1175,62 +1145,49 @@ function buildStep3(){
 }
 
 // ─── Panel renderer ───────────────────────────────────────────────────────────
-function renderPanel(container, id, scored, r, selWH, totalDemand){
+function renderPanel(container,id,scored,r,selWH,totalDemand){
   container.innerHTML='';
-  if(id==='calc') buildCalcPanel(container, scored, r, selWH);
-  else if(id==='breakeven') buildBreakevenPanel(container, r, totalDemand);
+  if(id==='calc')buildCalcPanel(container,scored,r,selWH);
+  else if(id==='breakeven')buildBreakevenPanel(container,r,totalDemand);
 }
 
-function buildCalcPanel(container, scored, r, selWH){
+function buildCalcPanel(container,scored,r,selWH){
   const w=r.weights;
   const cities=getCandidateCities();
-  // Re-run scoreAll to get the normalization context
   const sups=selWH?selWH.suppliers:state.suppliers;
   const allScored=scoreAll(sups,cities,w);
   const cityRank=allScored.findIndex(c=>c.name===scored.name&&c.state===scored.state)+1;
   const totalCities=allScored.length;
   const W=Object.values(w).reduce((a,b)=>a+b,0)||1;
-
   container.innerHTML=`<div style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:18px;">How ${scored.name}, ${scored.state} got a score of ${scored.suitability}/100</div>`;
-
-  // Step 1: Raw data
   const s1=document.createElement('div');s1.className='calc-step';
   s1.innerHTML=`<div class="calc-step-title"><div class="calc-step-num">1</div>Collect raw data for ${scored.name}</div>
     <p style="font-size:12.5px;color:var(--text2);margin-bottom:10px;line-height:1.65;">We start with the actual measured values for each cost factor.</p>
-    <table class="calc-table">
-      <thead><tr><th>Factor</th><th>Raw value</th><th>What it means</th><th>Weight</th></tr></thead>
-      <tbody>
-        <tr><td class="label">Shipping cost</td><td>${scored.transportKm.toLocaleString()} km</td><td>Demand-weighted avg road dist to all your suppliers</td><td>${w.transport}%</td></tr>
-        <tr><td class="label">Labor cost</td><td>${scored.labor.toFixed(3)}×</td><td>Regional wage index (1.0 = US national average)</td><td>${w.labor}%</td></tr>
-        <tr><td class="label">Facility cost</td><td>${scored.land.toFixed(3)}×</td><td>Warehouse lease cost index (1.0 = US national average)</td><td>${w.land}%</td></tr>
-        <tr><td class="label">Workforce</td><td>${scored.pop.toFixed(2)}M pop</td><td>Metro area population proxy for labor pool size</td><td>${w.workforce}%</td></tr>
-      </tbody>
-    </table>`;
+    <table class="calc-table"><thead><tr><th>Factor</th><th>Raw value</th><th>What it means</th><th>Weight</th></tr></thead>
+    <tbody>
+      <tr><td class="label">Shipping cost</td><td>${scored.transportKm.toLocaleString()} km</td><td>Demand-weighted avg road dist to all your suppliers</td><td>${w.transport}%</td></tr>
+      <tr><td class="label">Labor cost</td><td>${scored.labor.toFixed(3)}×</td><td>Regional wage index (1.0 = US national average)</td><td>${w.labor}%</td></tr>
+      <tr><td class="label">Facility cost</td><td>${scored.land.toFixed(3)}×</td><td>Warehouse lease cost index (1.0 = US national average)</td><td>${w.land}%</td></tr>
+      <tr><td class="label">Workforce</td><td>${scored.pop.toFixed(2)}M pop</td><td>Metro area population proxy for labor pool size</td><td>${w.workforce}%</td></tr>
+    </tbody></table>`;
   container.appendChild(s1);
-
-  // Step 2: Normalize
   const s2=document.createElement('div');s2.className='calc-step';
-  // Find best and worst in each dimension
   const bestT=Math.min(...allScored.map(c=>c.rawT||c.transportKm)),worstT=Math.max(...allScored.map(c=>c.rawT||c.transportKm));
   const bestLb=Math.min(...allScored.map(c=>c.labor)),worstLb=Math.max(...allScored.map(c=>c.labor));
   const bestLn=Math.min(...allScored.map(c=>c.land)),worstLn=Math.max(...allScored.map(c=>c.land));
   const bestWf=Math.max(...allScored.map(c=>c.pop)),worstWf=Math.min(...allScored.map(c=>c.pop));
   s2.innerHTML=`<div class="calc-step-title"><div class="calc-step-num">2</div>Normalize each factor (0 = best, 1 = worst)</div>
-    <p style="font-size:12.5px;color:var(--text2);margin-bottom:10px;line-height:1.65;">Raw values can't be compared directly (km vs dollars vs people). We scale each factor to a 0–1 range across all ${totalCities} candidate cities, so they're all on the same playing field.</p>
+    <p style="font-size:12.5px;color:var(--text2);margin-bottom:10px;line-height:1.65;">Raw values can't be compared directly. We scale each factor to 0–1 across all ${totalCities} candidate cities.</p>
     <div class="calc-formula">normalized = (value − best) / (worst − best)</div>
-    <table class="calc-table">
-      <thead><tr><th>Factor</th><th>Best city in pool</th><th>${scored.name}</th><th>Worst city in pool</th><th>Normalized (${scored.name})</th></tr></thead>
-      <tbody>
-        <tr><td class="label">Shipping</td><td>${Math.round(bestT).toLocaleString()} km</td><td>${scored.transportKm.toLocaleString()} km</td><td>${Math.round(worstT).toLocaleString()} km</td><td class="mono"><span class="hi">${scored.nT.toFixed(3)}</span></td></tr>
-        <tr><td class="label">Labor</td><td>${bestLb.toFixed(3)}×</td><td>${scored.labor.toFixed(3)}×</td><td>${worstLb.toFixed(3)}×</td><td class="mono"><span class="hi">${scored.nLb.toFixed(3)}</span></td></tr>
-        <tr><td class="label">Facility</td><td>${bestLn.toFixed(3)}×</td><td>${scored.land.toFixed(3)}×</td><td>${worstLn.toFixed(3)}×</td><td class="mono"><span class="hi">${scored.nLn.toFixed(3)}</span></td></tr>
-        <tr><td class="label">Workforce</td><td>${bestWf.toFixed(2)}M</td><td>${scored.pop.toFixed(2)}M</td><td>${worstWf.toFixed(2)}M</td><td class="mono"><span class="hi">${scored.nWf.toFixed(3)}</span></td></tr>
-      </tbody>
-    </table>
+    <table class="calc-table"><thead><tr><th>Factor</th><th>Best city in pool</th><th>${scored.name}</th><th>Worst city in pool</th><th>Normalized (${scored.name})</th></tr></thead>
+    <tbody>
+      <tr><td class="label">Shipping</td><td>${Math.round(bestT).toLocaleString()} km</td><td>${scored.transportKm.toLocaleString()} km</td><td>${Math.round(worstT).toLocaleString()} km</td><td class="mono"><span class="hi">${scored.nT.toFixed(3)}</span></td></tr>
+      <tr><td class="label">Labor</td><td>${bestLb.toFixed(3)}×</td><td>${scored.labor.toFixed(3)}×</td><td>${worstLb.toFixed(3)}×</td><td class="mono"><span class="hi">${scored.nLb.toFixed(3)}</span></td></tr>
+      <tr><td class="label">Facility</td><td>${bestLn.toFixed(3)}×</td><td>${scored.land.toFixed(3)}×</td><td>${worstLn.toFixed(3)}×</td><td class="mono"><span class="hi">${scored.nLn.toFixed(3)}</span></td></tr>
+      <tr><td class="label">Workforce</td><td>${bestWf.toFixed(2)}M</td><td>${scored.pop.toFixed(2)}M</td><td>${worstWf.toFixed(2)}M</td><td class="mono"><span class="hi">${scored.nWf.toFixed(3)}</span></td></tr>
+    </tbody></table>
     <p class="calc-note">Lower normalized value = better (closer to the best city in the pool).</p>`;
   container.appendChild(s2);
-
-  // Step 3: Weighted composite
   const s3=document.createElement('div');s3.className='calc-step';
   const tComp=((w.transport*scored.nT)+(w.labor*scored.nLb)+(w.land*scored.nLn)+(w.workforce*scored.nWf))/W;
   const contribT=((w.transport/W)*scored.nT).toFixed(4);
@@ -1238,15 +1195,13 @@ function buildCalcPanel(container, scored, r, selWH){
   const contribLn=((w.land/W)*scored.nLn).toFixed(4);
   const contribWf=((w.workforce/W)*scored.nWf).toFixed(4);
   s3.innerHTML=`<div class="calc-step-title"><div class="calc-step-num">3</div>Weighted composite score</div>
-    <p style="font-size:12.5px;color:var(--text2);margin-bottom:10px;line-height:1.65;">Multiply each normalized factor by its weight (as a fraction of 100%), then add them up.</p>
+    <p style="font-size:12.5px;color:var(--text2);margin-bottom:10px;line-height:1.65;">Multiply each normalized factor by its weight, then add them up.</p>
     <div class="calc-formula">composite = (T×${w.transport} + Lb×${w.labor} + Ln×${w.land} + Wf×${w.workforce}) / ${W}
 = (${scored.nT.toFixed(3)}×${w.transport} + ${scored.nLb.toFixed(3)}×${w.labor} + ${scored.nLn.toFixed(3)}×${w.land} + ${scored.nWf.toFixed(3)}×${w.workforce}) / ${W}
 = (<span class="hi">${contribT}</span> + <span class="hi">${contribLb}</span> + <span class="hi">${contribLn}</span> + <span class="hi">${contribWf}</span>)
 = <span class="hi2">${tComp.toFixed(4)}</span></div>
-    <p class="calc-note">Lower composite = better. 0.0 would be the perfect city; 1.0 would be the worst possible.</p>`;
+    <p class="calc-note">Lower composite = better. 0.0 = perfect city; 1.0 = worst possible.</p>`;
   container.appendChild(s3);
-
-  // Step 4: Convert to 0-100
   const s4=document.createElement('div');s4.className='calc-step';
   s4.innerHTML=`<div class="calc-step-title"><div class="calc-step-num">4</div>Convert to 0–100 score</div>
     <p style="font-size:12.5px;color:var(--text2);margin-bottom:12px;line-height:1.65;">Flip and scale so that 100 = best possible, 0 = worst possible.</p>
@@ -1257,16 +1212,16 @@ function buildCalcPanel(container, scored, r, selWH){
       <div class="final-score-big">${scored.suitability}</div>
       <div class="final-score-detail">
         <strong>${scored.name}, ${scored.state}</strong> ranks <strong>#${cityRank} of ${totalCities}</strong> candidate cities for your specific supplier locations.<br/>
-        This score is <em>absolute</em> — it reflects a genuine comparison against all alternatives, not just the other selected warehouses.
-        ${scored.suitability>=80?'This is an excellent pick — very few cities beat it for your network.':scored.suitability>=65?'This is a good pick — it outperforms the majority of alternatives.':scored.suitability>=50?'This is a fair pick. There are better options worth reviewing.':'There are significantly better options in the top-10 table.'}
+        This score is <em>absolute</em> — a genuine comparison against all alternatives.
+        ${scored.suitability>=80?'Excellent pick — very few cities beat it for your network.':scored.suitability>=65?'Good pick — outperforms the majority of alternatives.':scored.suitability>=50?'Fair pick. Better options worth reviewing in the top-10 table.':'Significantly better options exist in the top-10 table.'}
       </div>
     </div>`;
   container.appendChild(s4);
 }
 
-function buildBreakevenPanel(container, r, totalDemand){
+function buildBreakevenPanel(container,r,totalDemand){
   container.innerHTML=`<div style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:6px;">Break-even calculator</div>
-    <p style="font-size:12.5px;color:var(--text2);margin-bottom:18px;line-height:1.65;">Is your ${r.actualWH}-warehouse network worth the extra fixed cost vs one central warehouse? Adjust the inputs below to match your real cost structure.</p>
+    <p style="font-size:12.5px;color:var(--text2);margin-bottom:18px;line-height:1.65;">Is your ${r.actualWH}-warehouse network worth the extra fixed cost vs one central warehouse?</p>
     <div class="be-inputs" id="beInputs">
       <div class="be-field"><label>Fixed cost per warehouse per year ($)<br/><span style="font-size:11px;font-weight:400;color:var(--text3);">Rent, staff, utilities, insurance</span></label><input type="number" id="be_fixed" value="${state.breakeven.fixed}" min="0" step="50000" style="font-family:var(--mono);margin-top:5px;"/></div>
       <div class="be-field"><label>Variable freight cost per unit per km ($)<br/><span style="font-size:11px;font-weight:400;color:var(--text3);">Avg cost per shipment unit-kilometer</span></label><input type="number" id="be_freight" value="${state.breakeven.freight}" min="0" step="0.0005" style="font-family:var(--mono);margin-top:5px;"/></div>
@@ -1277,7 +1232,6 @@ function buildBreakevenPanel(container, r, totalDemand){
     const fixed=+container.querySelector('#be_fixed').value||0;
     const freight=+container.querySelector('#be_freight').value||0;
     state.breakeven={fixed,freight};
-
     const avgDist1=r.top10[0].transportKm;
     const avgDistN=r.actualWH>1?networkAvgDist(r.warehouses):avgDist1;
     const cost1=fixed*1+freight*totalDemand*avgDist1;
@@ -1285,76 +1239,273 @@ function buildBreakevenPanel(container, r, totalDemand){
     const savings=cost1-costN;
     const savingsPct=cost1>0?Math.round(savings/cost1*100):0;
     const fmt=n=>n>=1e6?`$${(n/1e6).toFixed(2)}M`:(n>=1e3?`$${(n/1000).toFixed(0)}K`:`$${Math.round(n).toLocaleString()}`);
-    const betterN=costN<=cost1;
-    const vc=betterN?'var(--green)':'var(--red)';
-
+    const betterN=costN<=cost1;const vc=betterN?'var(--green)':'var(--red)';
     let beqDemand=null;
-    if(r.actualWH>1&&avgDist1>avgDistN&&freight>0){
-      beqDemand=Math.round(fixed*(r.actualWH-1)/(freight*(avgDist1-avgDistN)));
-    }
-
-    const res=container.querySelector('#beResult');
-    res.innerHTML='';
-
-    // Cost cards
+    if(r.actualWH>1&&avgDist1>avgDistN&&freight>0){beqDemand=Math.round(fixed*(r.actualWH-1)/(freight*(avgDist1-avgDistN)));}
+    const res=container.querySelector('#beResult');res.innerHTML='';
     const cRow=document.createElement('div');cRow.className='be-result-grid';
-    const cards=[
-      {label:`1 warehouse`,val:fmt(cost1),sub:`${Math.round(avgDist1).toLocaleString()} km avg`,color:'var(--blue)'},
-      ...(r.actualWH>1?[{label:`${r.actualWH} warehouses`,val:fmt(costN),sub:`${Math.round(avgDistN).toLocaleString()} km avg`,color:WH_COLORS[0]}]:[]),
-      ...(r.actualWH>1?[{label:betterN?'Annual savings':'Extra cost',val:`${betterN?'-':'+'} ${fmt(Math.abs(savings))}`,sub:`${Math.abs(savingsPct)}% ${betterN?'cheaper':'more expensive'}`,color:betterN?'var(--green)':'var(--red)'}]:[]),
-    ];
-    cards.forEach(card=>{
-      cRow.innerHTML+=`<div class="be-cost-card" style="border-top:3px solid ${card.color};"><div class="be-cost-val" style="color:${card.color};">${card.val}/yr</div><div class="be-cost-lbl">${card.label}<br/><span style="font-weight:400;">${card.sub}</span></div></div>`;
-    });
+    const cards=[{label:`1 warehouse`,val:fmt(cost1),sub:`${Math.round(avgDist1).toLocaleString()} km avg`,color:'var(--blue)'},...(r.actualWH>1?[{label:`${r.actualWH} warehouses`,val:fmt(costN),sub:`${Math.round(avgDistN).toLocaleString()} km avg`,color:WH_COLORS[0]},{label:betterN?'Annual savings':'Extra cost',val:`${betterN?'-':'+'} ${fmt(Math.abs(savings))}`,sub:`${Math.abs(savingsPct)}% ${betterN?'cheaper':'more expensive'}`,color:betterN?'var(--green)':'var(--red)'}]:[])];
+    cards.forEach(card=>{cRow.innerHTML+=`<div class="be-cost-card" style="border-top:3px solid ${card.color};"><div class="be-cost-val" style="color:${card.color};">${card.val}/yr</div><div class="be-cost-lbl">${card.label}<br/><span style="font-weight:400;">${card.sub}</span></div></div>`;});
     res.appendChild(cRow);
-
     const verdict=document.createElement('div');verdict.className='be-verdict';
-    if(r.actualWH>1){
-      const distDiff=Math.round(Math.abs(avgDist1-avgDistN));
-      verdict.innerHTML=`<strong>${betterN?'✅ Your '+r.actualWH+'-warehouse network saves money':'⚠️ A single warehouse is cheaper at current demand volumes'}</strong> — the multi-WH network costs <strong style="color:${vc};">${fmt(Math.abs(savings))} per year (${Math.abs(savingsPct)}%) ${betterN?'less':'more'}</strong> than a single warehouse. The ${distDiff.toLocaleString()} km reduction in average shipping distance ${betterN?'outweighs':'does not yet offset'} the extra fixed cost of ${fmt(fixed*(r.actualWH-1))} per year.`;
-      if(beqDemand!==null){
-        verdict.innerHTML+=`<br/><br/><strong>Break-even demand:</strong> You need <strong>${beqDemand.toLocaleString()} units/year</strong> for the ${r.actualWH}-WH network to pay off. Your current volume is <strong>${totalDemand.toLocaleString()} units</strong> — <span style="color:${totalDemand>=beqDemand?'var(--green)':'var(--amber)'};font-weight:600;">${totalDemand>=beqDemand?'you are above break-even ✓':'you are below break-even ⚠️'}</span>.`;
-      }
-    } else {
-      verdict.innerHTML=`<strong>Add a second warehouse</strong> in Step 2 to see the full break-even comparison. At your current demand of ${totalDemand.toLocaleString()} units/year, you can estimate whether the freight savings would justify the extra fixed cost.`;
-    }
+    if(r.actualWH>1){const distDiff=Math.round(Math.abs(avgDist1-avgDistN));verdict.innerHTML=`<strong>${betterN?'✅ Your '+r.actualWH+'-warehouse network saves money':'⚠️ A single warehouse is cheaper at current demand volumes'}</strong> — the multi-WH network costs <strong style="color:${vc};">${fmt(Math.abs(savings))} per year (${Math.abs(savingsPct)}%) ${betterN?'less':'more'}</strong> than a single warehouse. The ${distDiff.toLocaleString()} km reduction in average shipping distance ${betterN?'outweighs':'does not yet offset'} the extra fixed cost of ${fmt(fixed*(r.actualWH-1))} per year.`;if(beqDemand!==null){verdict.innerHTML+=`<br/><br/><strong>Break-even demand:</strong> You need <strong>${beqDemand.toLocaleString()} units/year</strong> for the ${r.actualWH}-WH network to pay off. Your current volume is <strong>${totalDemand.toLocaleString()} units</strong> — <span style="color:${totalDemand>=beqDemand?'var(--green)':'var(--amber)'};font-weight:600;">${totalDemand>=beqDemand?'you are above break-even ✓':'you are below break-even ⚠️'}</span>.`;}}
+    else{verdict.innerHTML=`<strong>Add a second warehouse</strong> in Step 2 to see the full break-even comparison.`;}
     res.appendChild(verdict);
-
-    // Break-even bar
-    if(beqDemand!==null){
-      const maxVal=Math.max(totalDemand,beqDemand)*1.15;
-      const fillPct=Math.min(98,Math.round(totalDemand/maxVal*100));
-      const markerPct=Math.min(97,Math.round(beqDemand/maxVal*100));
-      const barEl=document.createElement('div');barEl.className='be-bar-wrap';
-      barEl.innerHTML=`<div class="be-bar-label"><span>0 units</span><span style="color:var(--amber);">Break-even: ${(beqDemand/1000).toFixed(0)}K units/yr</span><span>Current: ${(totalDemand/1000).toFixed(0)}K units/yr</span></div>
-        <div class="be-bar-track">
-          <div class="be-bar-fill" style="width:${fillPct}%;background:${totalDemand>=beqDemand?'var(--green)':'var(--amber)'};"></div>
-          <div class="be-bar-marker" style="left:${markerPct}%;"></div>
-        </div>`;
-      res.appendChild(barEl);
-    }
-
-    // How it's calculated
-    const howEl=document.createElement('div');howEl.style.cssText='margin-top:14px;padding-top:14px;border-top:1px solid var(--border);font-size:12px;color:var(--text3);line-height:1.75;';
-    howEl.innerHTML=`<strong style="color:var(--text2);">How these numbers are calculated:</strong><br/>
-      1-WH annual cost = fixed cost (${fmt(fixed)}) + freight (${freight.toFixed(4)} $/unit/km × ${totalDemand.toLocaleString()} units × ${Math.round(avgDist1).toLocaleString()} km avg) = <strong style="font-family:var(--mono);">${fmt(cost1)}</strong><br/>
-      ${r.actualWH>1?`${r.actualWH}-WH annual cost = ${r.actualWH}× fixed (${fmt(fixed*r.actualWH)}) + freight (${freight.toFixed(4)} × ${totalDemand.toLocaleString()} × ${Math.round(avgDistN).toLocaleString()} km avg) = <strong style="font-family:var(--mono);">${fmt(costN)}</strong>`:''}`;
-    res.appendChild(howEl);
+    if(beqDemand!==null){const maxVal=Math.max(totalDemand,beqDemand)*1.15;const fillPct=Math.min(98,Math.round(totalDemand/maxVal*100));const markerPct=Math.min(97,Math.round(beqDemand/maxVal*100));const barEl=document.createElement('div');barEl.className='be-bar-wrap';barEl.innerHTML=`<div class="be-bar-label"><span>0 units</span><span style="color:var(--amber);">Break-even: ${(beqDemand/1000).toFixed(0)}K units/yr</span><span>Current: ${(totalDemand/1000).toFixed(0)}K units/yr</span></div><div class="be-bar-track"><div class="be-bar-fill" style="width:${fillPct}%;background:${totalDemand>=beqDemand?'var(--green)':'var(--amber)'};"></div><div class="be-bar-marker" style="left:${markerPct}%;"></div></div>`;res.appendChild(barEl);}
+    const howEl=document.createElement('div');howEl.style.cssText='margin-top:14px;padding-top:14px;border-top:1px solid var(--border);font-size:12px;color:var(--text3);line-height:1.75;';howEl.innerHTML=`<strong style="color:var(--text2);">How these numbers are calculated:</strong><br/>1-WH annual cost = fixed cost (${fmt(fixed)}) + freight (${freight.toFixed(4)} $/unit/km × ${totalDemand.toLocaleString()} units × ${Math.round(avgDist1).toLocaleString()} km avg) = <strong style="font-family:var(--mono);">${fmt(cost1)}</strong><br/>${r.actualWH>1?`${r.actualWH}-WH annual cost = ${r.actualWH}× fixed (${fmt(fixed*r.actualWH)}) + freight (${freight.toFixed(4)} × ${totalDemand.toLocaleString()} × ${Math.round(avgDistN).toLocaleString()} km avg) = <strong style="font-family:var(--mono);">${fmt(costN)}</strong>`:''}`; res.appendChild(howEl);
   };
-
-  setTimeout(()=>{
-    doCalc();
-    container.querySelector('#be_fixed').oninput=doCalc;
-    container.querySelector('#be_freight').oninput=doCalc;
-  },0);
+  setTimeout(()=>{doCalc();container.querySelector('#be_fixed').oninput=doCalc;container.querySelector('#be_freight').oninput=doCalc;},0);
 }
 
+// ─── Export: CSV ─────────────────────────────────────────────────────────────
 function exportCSV(){
   if(!state.results)return;
   const rows=[['Rank','City','State','Avg Road Dist (km)','Labor Index','Land Index','Population (M)','Score','Transport Component','Labor Component','Land Component','Workforce Component'],
     ...state.results.allScored.map((r,i)=>[i+1,r.name,r.state,r.transportKm,r.labor.toFixed(2),r.land.toFixed(2),r.pop.toFixed(1),r.suitability,Math.round((1-r.nT)*100),Math.round((1-r.nLb)*100),Math.round((1-r.nLn)*100),Math.round((1-r.nWf)*100)])];
   const csv=rows.map(r=>r.map(v=>`"${v}"`).join(',')).join('\n');
   const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download='warehouse_results.csv';document.body.appendChild(a);a.click();document.body.removeChild(a);
+  showToast('CSV downloaded');
+}
+
+// ─── Export: PDF (jsPDF) ─────────────────────────────────────────────────────
+function exportPDF(){
+  if(!state.results){showToast('Run optimization first');return;}
+  if(typeof window.jspdf==='undefined'){showToast('PDF library not loaded — try refreshing');return;}
+  const {jsPDF}=window.jspdf;
+  const r=state.results;
+  const doc=new jsPDF({orientation:'portrait',unit:'mm',format:'a4'});
+  const W=210,M=18,CW=W-M*2;
+  const dateStr=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+
+  // ── Header band ──────────────────────────────────────────────────────────
+  doc.setFillColor(13,21,38);
+  doc.rect(0,0,W,28,'F');
+  doc.setTextColor(255,255,255);
+  doc.setFontSize(14);doc.setFont('helvetica','bold');
+  doc.text('Warehouse Location Optimizer',M,12);
+  doc.setFontSize(9);doc.setFont('helvetica','normal');doc.setTextColor(148,163,184);
+  doc.text('Multi-criteria facility location report',M,18);
+  doc.text(`Generated: ${dateStr}`,M,23);
+  doc.setTextColor(147,197,253);
+  doc.text(`Supply Chain Tools`,W-M,12,{align:'right'});
+
+  let y=36;
+
+  // ── Inputs summary ────────────────────────────────────────────────────────
+  doc.setFillColor(239,246,255);doc.roundedRect(M,y,CW,28,2,2,'F');
+  doc.setTextColor(30,58,138);doc.setFontSize(8);doc.setFont('helvetica','bold');
+  doc.text('ANALYSIS INPUTS',M+6,y+7);
+  doc.setFont('helvetica','normal');doc.setTextColor(55,65,81);doc.setFontSize(8.5);
+  const priLabel=PRIORITY_PRESETS.find(p=>p.id===r.priorityId)?.label||r.priorityId;
+  const td=state.suppliers.reduce((s,x)=>s+x.demand,0);
+  const inpLines=[
+    [`Supplier locations:`,`${state.suppliers.length} sites — ${state.suppliers.map(s=>s.name).join(', ')}`],
+    [`Total demand:`,`${td.toLocaleString()} units/year`],
+    [`Priority:`,`${priLabel} (Transport ${r.weights.transport}% / Labor ${r.weights.labor}% / Land ${r.weights.land}% / Workforce ${r.weights.workforce}%)`],
+    [`Candidate cities evaluated:`,`${r.cityCount} US cities`],
+  ];
+  inpLines.forEach((ln,i)=>{
+    const row=y+14+i*5;
+    doc.setFont('helvetica','bold');doc.setTextColor(55,65,81);doc.text(ln[0],M+6,row);
+    doc.setFont('helvetica','normal');doc.setTextColor(75,85,99);
+    doc.text(ln[1],M+52,row,{maxWidth:CW-56});
+  });
+  y+=34;
+
+  // ── Warehouse recommendations ─────────────────────────────────────────────
+  doc.setFont('helvetica','bold');doc.setFontSize(11);doc.setTextColor(15,23,42);
+  doc.text('Recommended Warehouse Locations',M,y);y+=6;
+
+  const cities=getCandidateCities();
+  r.warehouses.forEach((wh,wi)=>{
+    if(y>260){doc.addPage();y=20;}
+    const scored=r.warehouses.length>1?scoreWarehouseAbsolute(wh,cities,r.weights):r.top10[0];
+    const color=wi===0?[37,99,235]:wi===1?[4,120,87]:wi===2?[180,83,9]:wi===3?[124,58,237]:[185,28,28];
+    doc.setFillColor(...color);doc.roundedRect(M,y,4,22,1,1,'F');
+    doc.setFillColor(248,250,252);doc.roundedRect(M+5,y,CW-5,22,2,2,'F');
+    doc.setFont('helvetica','bold');doc.setFontSize(9);doc.setTextColor(...color);
+    doc.text(`WAREHOUSE ${wi+1}`,M+10,y+6);
+    doc.setFont('helvetica','bold');doc.setFontSize(12);doc.setTextColor(15,23,42);
+    doc.text(`${wh.city.name}, ${wh.city.state}`,M+10,y+13);
+    doc.setFont('helvetica','normal');doc.setFontSize(8.5);doc.setTextColor(75,85,99);
+    const sl=scoreLabel(scored.suitability);
+    doc.text(`Score: ${scored.suitability}/100 (${sl.text})  ·  Avg shipping: ${scored.transportKm.toLocaleString()} km  ·  Labor: ${wh.city.labor.toFixed(2)}×  ·  Land: ${wh.city.land.toFixed(2)}×  ·  Pop: ${wh.city.pop.toFixed(1)}M`,M+10,y+19);
+    if(r.warehouses.length>1){
+      doc.setTextColor(107,114,128);doc.setFontSize(7.5);
+      doc.text(`Serves: ${wh.suppliers.map(s=>s.name).join(', ')}`,M+10,y+24,{maxWidth:CW-14});
+      y+=5;
+    }
+    y+=27;
+  });
+
+  // ── Top 10 table ──────────────────────────────────────────────────────────
+  if(y>240){doc.addPage();y=20;}
+  y+=4;
+  doc.setFont('helvetica','bold');doc.setFontSize(11);doc.setTextColor(15,23,42);
+  doc.text(`Top 10 Ranked Cities (of ${r.cityCount} evaluated)`,M,y);y+=4;
+
+  doc.autoTable({
+    startY:y,margin:{left:M,right:M},
+    head:[['#','City','State','Avg Dist (km)','Labor','Land','Pop (M)','Score']],
+    body:r.top10.map((row,i)=>[
+      i+1,row.name,row.state,
+      row.transportKm.toLocaleString(),
+      row.labor.toFixed(2)+'×',row.land.toFixed(2)+'×',
+      row.pop.toFixed(1),`${row.suitability}/100`,
+    ]),
+    headStyles:{fillColor:[13,21,38],textColor:[255,255,255],fontStyle:'bold',fontSize:8},
+    bodyStyles:{fontSize:8,textColor:[55,65,81]},
+    alternateRowStyles:{fillColor:[248,250,252]},
+    columnStyles:{0:{cellWidth:8,halign:'center'},2:{cellWidth:12},3:{cellWidth:24,halign:'right'},4:{cellWidth:16,halign:'right'},5:{cellWidth:16,halign:'right'},6:{cellWidth:14,halign:'right'},7:{cellWidth:18,halign:'right',fontStyle:'bold'}},
+    didParseCell:(d)=>{if(d.section==='body'&&d.row.index===0){d.cell.styles.textColor=[37,99,235];d.cell.styles.fontStyle='bold';}},
+  });
+
+  y=doc.lastAutoTable.finalY+10;
+
+  // ── All cities table ───────────────────────────────────────────────────────
+  if(y>240){doc.addPage();y=20;}
+  doc.setFont('helvetica','bold');doc.setFontSize(11);doc.setTextColor(15,23,42);
+  doc.text('All Candidate Cities — Full Rankings',M,y);y+=4;
+
+  doc.autoTable({
+    startY:y,margin:{left:M,right:M},
+    head:[['#','City','State','Avg Dist (km)','Labor','Land','Pop (M)','Score']],
+    body:r.allScored.map((row,i)=>[
+      i+1,row.name,row.state,
+      row.transportKm.toLocaleString(),
+      row.labor.toFixed(2)+'×',row.land.toFixed(2)+'×',
+      row.pop.toFixed(1),`${row.suitability}/100`,
+    ]),
+    headStyles:{fillColor:[13,21,38],textColor:[255,255,255],fontStyle:'bold',fontSize:7.5},
+    bodyStyles:{fontSize:7.5,textColor:[55,65,81]},
+    alternateRowStyles:{fillColor:[248,250,252]},
+    columnStyles:{0:{cellWidth:8,halign:'center'},2:{cellWidth:12},3:{cellWidth:24,halign:'right'},4:{cellWidth:16,halign:'right'},5:{cellWidth:16,halign:'right'},6:{cellWidth:14,halign:'right'},7:{cellWidth:18,halign:'right',fontStyle:'bold'}},
+    didParseCell:(d)=>{if(d.section==='body'&&d.row.index===0){d.cell.styles.textColor=[37,99,235];d.cell.styles.fontStyle='bold';}},
+  });
+
+  // ── Footer on each page ───────────────────────────────────────────────────
+  const pageCount=doc.internal.getNumberOfPages();
+  for(let i=1;i<=pageCount;i++){
+    doc.setPage(i);
+    doc.setFontSize(7.5);doc.setTextColor(156,163,175);
+    doc.text(`Warehouse Location Optimizer · ${dateStr}`,M,295);
+    doc.text(`Page ${i} of ${pageCount}`,W-M,295,{align:'right'});
+  }
+
+  doc.save(`warehouse_report_${new Date().toISOString().slice(0,10)}.pdf`);
+  showToast('PDF downloaded');
+}
+
+// ─── Export: DOCX (Word-compatible HTML blob) ────────────────────────────────
+function exportDOCX(){
+  if(!state.results){showToast('Run optimization first');return;}
+  const r=state.results;
+  const dateStr=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  const priLabel=PRIORITY_PRESETS.find(p=>p.id===r.priorityId)?.label||r.priorityId;
+  const td=state.suppliers.reduce((s,x)=>s+x.demand,0);
+  const cities=getCandidateCities();
+
+  const whRows=r.warehouses.map((wh,wi)=>{
+    const scored=r.warehouses.length>1?scoreWarehouseAbsolute(wh,cities,r.weights):r.top10[0];
+    const sl=scoreLabel(scored.suitability);
+    return `<tr>
+      <td style="font-weight:bold;color:#1d4ed8;">WH ${wi+1}</td>
+      <td style="font-weight:bold;">${wh.city.name}, ${wh.city.state}</td>
+      <td>${scored.suitability}/100 — ${sl.text}</td>
+      <td>${scored.transportKm.toLocaleString()} km</td>
+      <td>${wh.city.labor.toFixed(2)}×</td>
+      <td>${wh.city.land.toFixed(2)}×</td>
+      <td>${r.warehouses.length>1?wh.suppliers.map(s=>s.name).join(', '):'All locations'}</td>
+    </tr>`;
+  }).join('');
+
+  const top10Rows=r.top10.map((row,i)=>`<tr${i===0?' style="background:#eff6ff;"':''}>
+    <td>${i+1}</td>
+    <td style="${i===0?'font-weight:bold;color:#1d4ed8;':''}">${row.name}</td>
+    <td>${row.state}</td>
+    <td>${row.transportKm.toLocaleString()}</td>
+    <td>${row.labor.toFixed(2)}×</td>
+    <td>${row.land.toFixed(2)}×</td>
+    <td>${row.pop.toFixed(1)}</td>
+    <td style="font-weight:bold;${i===0?'color:#1d4ed8;':''}">${row.suitability}/100</td>
+  </tr>`).join('');
+
+  const allRows=r.allScored.map((row,i)=>`<tr${i===0?' style="background:#eff6ff;"':''}>
+    <td>${i+1}</td>
+    <td style="${i===0?'font-weight:bold;color:#1d4ed8;':''}">${row.name}</td>
+    <td>${row.state}</td>
+    <td>${row.transportKm.toLocaleString()}</td>
+    <td>${row.labor.toFixed(2)}×</td>
+    <td>${row.land.toFixed(2)}×</td>
+    <td>${row.pop.toFixed(1)}</td>
+    <td style="font-weight:bold;${i===0?'color:#1d4ed8;':''}">${row.suitability}/100</td>
+  </tr>`).join('');
+
+  const html=`<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40">
+<head><meta charset="utf-8"/>
+<style>
+  body{font-family:Calibri,Arial,sans-serif;font-size:11pt;color:#111827;margin:2cm;}
+  h1{font-size:18pt;color:#0d1526;margin-bottom:4pt;}
+  h2{font-size:13pt;color:#1e3a8a;margin-top:18pt;margin-bottom:6pt;border-bottom:1pt solid #e5e7eb;padding-bottom:4pt;}
+  h3{font-size:11pt;color:#374151;margin-top:12pt;margin-bottom:4pt;}
+  .meta{color:#6b7280;font-size:9pt;margin-bottom:18pt;}
+  .badge{display:inline-block;background:#eff6ff;color:#1d4ed8;padding:2pt 8pt;border-radius:4pt;font-size:9pt;font-weight:bold;}
+  .info-box{background:#f9fafb;border:1pt solid #e5e7eb;border-left:4pt solid #2563eb;padding:8pt 12pt;margin:10pt 0;font-size:10pt;}
+  table{border-collapse:collapse;width:100%;margin:8pt 0;}
+  th{background:#0d1526;color:#fff;padding:6pt 8pt;text-align:left;font-size:9pt;}
+  td{padding:5pt 8pt;border-bottom:1pt solid #e5e7eb;font-size:9pt;}
+  tr:nth-child(even) td{background:#f9fafb;}
+  .footer{color:#9ca3af;font-size:8pt;margin-top:24pt;border-top:1pt solid #e5e7eb;padding-top:8pt;}
+</style>
+</head>
+<body>
+  <h1>Warehouse Location Optimizer Report</h1>
+  <div class="meta">Generated on ${dateStr} &nbsp;·&nbsp; Supply Chain Tools</div>
+
+  <h2>1. Analysis Inputs</h2>
+  <div class="info-box">
+    <b>Supplier locations (${state.suppliers.length}):</b> ${state.suppliers.map(s=>s.name).join(', ')}<br/>
+    <b>Total annual demand:</b> ${td.toLocaleString()} units/year<br/>
+    <b>Priority preset:</b> ${priLabel}<br/>
+    <b>Weights:</b> Transport ${r.weights.transport}% / Labor ${r.weights.labor}% / Land ${r.weights.land}% / Workforce ${r.weights.workforce}%<br/>
+    <b>Candidate cities evaluated:</b> ${r.cityCount}<br/>
+    <b>Warehouses requested:</b> ${r.actualWH}
+  </div>
+
+  <h2>2. Recommended Warehouse Locations</h2>
+  <table>
+    <thead><tr><th>#</th><th>City</th><th>Score</th><th>Avg Dist (km)</th><th>Labor</th><th>Land</th><th>Serves</th></tr></thead>
+    <tbody>${whRows}</tbody>
+  </table>
+
+  <h2>3. Top 10 Ranked Cities</h2>
+  <p style="color:#6b7280;font-size:9pt;">Of ${r.cityCount} candidate cities evaluated for your supplier locations. Score is absolute — 100 = best possible city in the pool.</p>
+  <table>
+    <thead><tr><th>#</th><th>City</th><th>State</th><th>Avg Dist (km)</th><th>Labor</th><th>Land</th><th>Pop (M)</th><th>Score</th></tr></thead>
+    <tbody>${top10Rows}</tbody>
+  </table>
+
+  <h2>4. All ${r.cityCount} Cities — Full Rankings</h2>
+  <table>
+    <thead><tr><th>#</th><th>City</th><th>State</th><th>Avg Dist (km)</th><th>Labor</th><th>Land</th><th>Pop (M)</th><th>Score</th></tr></thead>
+    <tbody>${allRows}</tbody>
+  </table>
+
+  <div class="footer">
+    Warehouse Location Optimizer &nbsp;·&nbsp; ${dateStr} &nbsp;·&nbsp;
+    Scores based on weighted multi-criteria analysis: transport cost, labor index, facility cost, workforce availability.
+    Data is indicative; verify with local brokers before making final site decisions.
+  </div>
+</body>
+</html>`;
+
+  const blob=new Blob(['\ufeff',html],{type:'application/msword'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url;a.download=`warehouse_report_${new Date().toISOString().slice(0,10)}.doc`;
+  document.body.appendChild(a);a.click();
+  document.body.removeChild(a);URL.revokeObjectURL(url);
+  showToast('Word document downloaded');
 }
 
 render();
